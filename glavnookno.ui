@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>glavnookno</class>
+ <widget class="QMainWindow" name="glavnookno">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Štiri v vrsto</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_tiri_v_vrsto">
+    <property name="title">
+     <string>Štiri v vrsto</string>
+    </property>
+    <addaction name="actionZacni_igro"/>
+    <addaction name="actionZapri"/>
+   </widget>
+   <addaction name="menu_tiri_v_vrsto"/>
+  </widget>
+  <action name="actionZacni_igro">
+   <property name="text">
+    <string>Začni igro</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionZapri">
+   <property name="text">
+    <string>Zapri</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
