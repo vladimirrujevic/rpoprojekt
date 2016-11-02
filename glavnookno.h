@@ -23,6 +23,10 @@ private slots:
 
   void on_actionZacni_igro_triggered();
 
+  void on_btnZacni_clicked();
+
+  void on_btnZapri_clicked();
+
 private:
   Ui::glavnookno *ui;
 };
