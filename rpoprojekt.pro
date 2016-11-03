@@ -13,8 +13,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        glavnookno.cpp
+        glavnookno.cpp \
+    zacetnookno.cpp
 
-HEADERS  += glavnookno.h
+HEADERS  += glavnookno.h \
+    zacetnookno.h
 
-FORMS    += glavnookno.ui
+FORMS    += glavnookno.ui \
+    zacetnookno.ui

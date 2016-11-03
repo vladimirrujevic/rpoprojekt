@@ -17,16 +17,9 @@ public:
   ~glavnookno();
 
 private slots:
-  void on_actionZapri_triggered();
-
-  void on_actionZa_ni_igro_triggered();
-
   void on_actionZacni_igro_triggered();
 
-  void on_btnZacni_clicked();
-
-  void on_btnZapri_clicked();
-
+  void onBtnStart();
 private:
   Ui::glavnookno *ui;
 };
