@@ -6,6 +6,10 @@
 #include "ui_vnosimena1.h"
 #include "ui_vnosimena2.h"
 #include "ui_glavnookno.h"
+#include "izpis_neodloceno.h"
+#include "ui_izpis_neodloceno.h"
+#include "izpis_zmagovalca.h"
+#include "ui_izpis_zmagovalca.h"
 #include <string>
 #include <QApplication>
 
