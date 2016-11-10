@@ -7,10 +7,16 @@ int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
   glavnookno w;
-  w.show();
+  w.setVisible(false);
   QDialog* d = new QDialog(0,0);
   Ui_ZacetnoOkno zUi;
   zUi.setupUi(d);
-  d->show();
+  int s = d->exec();
+  if(s == QDialog::Rejected){
+    w.close();
+  } else if (s == QDialog::Accepted){
+    w.show();
+    w.start();
+  }
   return a.exec();
 }

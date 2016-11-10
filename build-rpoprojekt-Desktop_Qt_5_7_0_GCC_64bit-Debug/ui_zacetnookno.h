@@ -34,7 +34,7 @@ public:
     {
         if (ZacetnoOkno->objectName().isEmpty())
             ZacetnoOkno->setObjectName(QStringLiteral("ZacetnoOkno"));
-        ZacetnoOkno->resize(400, 300);
+        ZacetnoOkno->resize(600, 450);
         ZacetnoOkno->setStyleSheet(QStringLiteral("background-image: url(:/slike/SLIKE/Ozadje1.png);"));
         gridLayout = new QGridLayout(ZacetnoOkno);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -58,7 +58,7 @@ public:
         btnZapri->setMinimumSize(QSize(200, 66));
         btnZapri->setMaximumSize(QSize(200, 66));
         btnZapri->setBaseSize(QSize(200, 66));
-        btnZapri->setStyleSheet(QLatin1String("background-image:url(:/slike/SLIKE/gumb2.png);\n"
+        btnZapri->setStyleSheet(QLatin1String("background-image: url(:/slike/SLIKE/gumb2.png);\n"
 "border:none;\n"
 "background-color: rgba(255, 255, 255, 0)"));
         btnZapri->setLocale(QLocale(QLocale::Slovenian, QLocale::Slovenia));
@@ -70,15 +70,15 @@ public:
 
 
         retranslateUi(ZacetnoOkno);
-        QObject::connect(btnZapri, SIGNAL(clicked()), ZacetnoOkno, SLOT(reject()));
         QObject::connect(btnZacni, SIGNAL(clicked()), ZacetnoOkno, SLOT(accept()));
+        QObject::connect(btnZapri, SIGNAL(clicked()), ZacetnoOkno, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(ZacetnoOkno);
     } // setupUi
 
     void retranslateUi(QDialog *ZacetnoOkno)
     {
-        ZacetnoOkno->setWindowTitle(QApplication::translate("ZacetnoOkno", "Dialog", 0));
+        ZacetnoOkno->setWindowTitle(QApplication::translate("ZacetnoOkno", "Za\304\215etno okno - \305\240tiri v vrsto", 0));
         btnZacni->setText(QString());
         btnZapri->setText(QString());
     } // retranslateUi

@@ -13,8 +13,11 @@
    height="150.00002"
    id="svg3014"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Nov dokument 1">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="gumb_DA.svg"
+   inkscape:export-filename="/home/vladimir/Projects/rpoprojekt/SLIKE/Da.png"
+   inkscape:export-xdpi="76.800003"
+   inkscape:export-ydpi="76.800003">
   <defs
      id="defs3016" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="207.68638"
-     inkscape:cy="290.04865"
+     inkscape:zoom="2.8"
+     inkscape:cx="57.042858"
+     inkscape:cy="81.304325"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,10 +38,12 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1366"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-height="715"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true" />
   <metadata
      id="metadata3019">
     <rdf:RDF>
@@ -47,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,7 +78,7 @@
            inkscape:export-ydpi="514">
           <path
              transform="matrix(1.3425393,0,0,1.3425394,-137.41851,-220.69794)"
-             d="m 474.28572,352.36218 c 0,102.56717 -83.14711,185.71428 -185.71428,185.71428 -102.56716,0 -185.71428,-83.14711 -185.71428,-185.71428 0,-102.56716 83.14712,-185.71428 185.71428,-185.71428 102.56717,0 185.71428,83.14712 185.71428,185.71428 z"
+             d="M 474.28572,352.36218 A 185.71428,185.71428 0 0 1 288.57144,538.07646 185.71428,185.71428 0 0 1 102.85716,352.36218 185.71428,185.71428 0 0 1 288.57144,166.6479 185.71428,185.71428 0 0 1 474.28572,352.36218 Z"
              sodipodi:ry="185.71428"
              sodipodi:rx="185.71428"
              sodipodi:cy="352.36218"
@@ -93,7 +98,7 @@
                sodipodi:cy="305.21933"
                sodipodi:rx="150"
                sodipodi:ry="150"
-               d="m 411.42856,305.21933 c 0,82.84271 -67.15729,150 -150,150 -82.84271,0 -150,-67.15729 -150,-150 0,-82.84271 67.15729,-150 150,-150 82.84271,0 150,67.15729 150,150 z"
+               d="m 411.42856,305.21933 a 150,150 0 0 1 -150,150 150,150 0 0 1 -150,-150 150,150 0 0 1 150,-150 150,150 0 0 1 150,150 z"
                transform="matrix(1.4285714,0,0,1.4285714,-123.46937,-183.66543)" />
           </a>
           <rect
@@ -118,13 +123,14 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot3944"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Adobe Naskh Medium;-inkscape-font-specification:Adobe Naskh Medium"
-       transform="matrix(1.2069085,0,0,1.2091711,23.87878,-102.33927)"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:'Adobe Naskh Medium';-inkscape-font-specification:'Adobe Naskh Medium';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(1.2069085,0,0,1.2091711,12.380592,-113.38466)"><flowRegion
          id="flowRegion3946"><rect
            id="rect3948"
-           width="108.89445"
-           height="80.610176"
+           width="58.884731"
+           height="46.348209"
            x="144.24979"
            y="582.84326" /></flowRegion><flowPara
-         id="flowPara3950">DA</flowPara></flowRoot>  </g>
+         id="flowPara3950"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans'">DA</flowPara></flowRoot>  </g>
 </svg>

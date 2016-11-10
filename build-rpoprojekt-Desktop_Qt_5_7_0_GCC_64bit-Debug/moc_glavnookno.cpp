@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_glavnookno_t {
     QByteArrayData data[4];
-    char stringdata0[53];
+    char stringdata0[29];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,13 +30,12 @@ struct qt_meta_stringdata_glavnookno_t {
 static const qt_meta_stringdata_glavnookno_t qt_meta_stringdata_glavnookno = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "glavnookno"
-QT_MOC_LITERAL(1, 11, 29), // "on_actionZacni_igro_triggered"
-QT_MOC_LITERAL(2, 41, 0), // ""
-QT_MOC_LITERAL(3, 42, 10) // "onBtnStart"
+QT_MOC_LITERAL(1, 11, 10), // "onBtnStart"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 5) // "start"
 
     },
-    "glavnookno\0on_actionZacni_igro_triggered\0"
-    "\0onBtnStart"
+    "glavnookno\0onBtnStart\0\0start"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +53,7 @@ static const uint qt_meta_data_glavnookno[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
+       1,    0,   24,    2, 0x0a /* Public */,
        3,    0,   25,    2, 0x0a /* Public */,
 
  // slots: parameters
@@ -70,8 +69,8 @@ void glavnookno::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         glavnookno *_t = static_cast<glavnookno *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_actionZacni_igro_triggered(); break;
-        case 1: _t->onBtnStart(); break;
+        case 0: _t->onBtnStart(); break;
+        case 1: _t->start(); break;
         default: ;
         }
     }

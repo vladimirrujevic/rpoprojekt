@@ -190,6 +190,7 @@ DIST          = ../../../../programi/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		../.qmake.stash \
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../../../programi/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -353,6 +354,7 @@ Makefile: ../rpoprojekt.pro ../../../programi/Qt/5.7/gcc_64/mkspecs/features/spe
 		../../../programi/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../../programi/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../programi/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../programi/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../programi/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../../programi/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -507,6 +509,7 @@ Makefile: ../rpoprojekt.pro ../../../programi/Qt/5.7/gcc_64/mkspecs/features/spe
 ../../../programi/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf:
 ../../../programi/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../programi/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../programi/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../programi/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf:
 ../../../programi/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf:
@@ -929,13 +932,46 @@ main.o: ../main.cpp ../glavnookno.h \
 		../zacetnookno.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		ui_zacetnookno.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/QLocale \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		../../../programi/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 glavnookno.o: ../glavnookno.cpp ../glavnookno.h \
@@ -1042,7 +1078,47 @@ glavnookno.o: ../glavnookno.cpp ../glavnookno.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
-		ui_glavnookno.h
+		ui_glavnookno.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QMenu \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qmenu.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QMenuBar \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qmenubar.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o glavnookno.o ../glavnookno.cpp
 
 zacetnookno.o: ../zacetnookno.cpp ../zacetnookno.h \
@@ -1144,7 +1220,49 @@ zacetnookno.o: ../zacetnookno.cpp ../zacetnookno.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
 		../../../programi/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_zacetnookno.h
+		ui_zacetnookno.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/QLocale \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../programi/Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o zacetnookno.o ../zacetnookno.cpp
 
 qrc_resource.o: qrc_resource.cpp 

@@ -14,11 +14,11 @@
    height="519.6886"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   inkscape:export-filename="C:\Users\Rok\Desktop\zeton1.png"
-   inkscape:export-xdpi="514"
-   inkscape:export-ydpi="514"
-   sodipodi:docname="risba.svg">
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="/home/vladimir/Projects/rpoprojekt/SLIKE/zeton2.png"
+   inkscape:export-xdpi="22.168449"
+   inkscape:export-ydpi="22.168449"
+   sodipodi:docname="zeton_rumen.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -38,15 +38,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-302.98205"
+     inkscape:cx="-741.55348"
      inkscape:cy="339.13775"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="715"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -60,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,7 +77,7 @@
        sodipodi:cy="352.36218"
        sodipodi:rx="185.71428"
        sodipodi:ry="185.71428"
-       d="m 474.28572,352.36218 a 185.71428,185.71428 0 1 1 -371.42856,0 185.71428,185.71428 0 1 1 371.42856,0 z"
+       d="M 474.28572,352.36218 A 185.71428,185.71428 0 0 1 288.57144,538.07646 185.71428,185.71428 0 0 1 102.85716,352.36218 185.71428,185.71428 0 0 1 288.57144,166.6479 185.71428,185.71428 0 0 1 474.28572,352.36218 Z"
        transform="matrix(1.3425393,0,0,1.3425394,-5.98994,67.87349)" />
     <a
        id="a5354"
@@ -85,7 +85,7 @@
        style="fill:#ffff00;fill-opacity:1;stroke:#ff9600;stroke-opacity:1">
       <path
          transform="matrix(1.4285714,0,0,1.4285714,-123.46937,-183.66543)"
-         d="m 411.42856,305.21933 c 0,82.84271 -67.15729,150 -150,150 -82.84271,0 -150,-67.15729 -150,-150 0,-82.84271 67.15729,-150 150,-150 82.84271,0 150,67.15729 150,150 z"
+         d="m 411.42856,305.21933 a 150,150 0 0 1 -150,150 150,150 0 0 1 -150,-150 150,150 0 0 1 150,-150 150,150 0 0 1 150,150 z"
          sodipodi:ry="150"
          sodipodi:rx="150"
          sodipodi:cy="305.21933"

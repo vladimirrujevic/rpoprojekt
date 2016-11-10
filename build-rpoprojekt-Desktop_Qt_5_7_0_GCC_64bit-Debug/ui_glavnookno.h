@@ -31,7 +31,6 @@ public:
     QGridLayout *gridLayout;
     QMenuBar *menuBar;
     QMenu *menu_tiri_v_vrsto;
-    QButtonGroup *buttonGroup;
 
     void setupUi(QMainWindow *glavnookno)
     {
@@ -72,7 +71,7 @@ public:
         glavnookno->setWindowTitle(QApplication::translate("glavnookno", "\305\240tiri v vrsto", 0));
         actionZapri->setText(QApplication::translate("glavnookno", "Zapri", 0));
         actionZapri->setShortcut(QApplication::translate("glavnookno", "Ctrl+Q", 0));
-        actionZacni_igro->setText(QApplication::translate("glavnookno", "Za\304\215ni igro", 0));
+        actionZacni_igro->setText(QApplication::translate("glavnookno", "Nova igra", 0));
         actionZacni_igro->setShortcut(QApplication::translate("glavnookno", "Ctrl+N", 0));
         menu_tiri_v_vrsto->setTitle(QApplication::translate("glavnookno", "\305\240tiri v vrsto", 0));
     } // retranslateUi

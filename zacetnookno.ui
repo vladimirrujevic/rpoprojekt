@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>600</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Začetno okno - Štiri v vrsto</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-image: url(:/slike/SLIKE/Ozadje1.png);</string>
@@ -74,7 +74,7 @@ background-color: rgba(255, 255, 255, 0);
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image:url(:/slike/SLIKE/gumb2.png);
+        <string notr="true">background-image: url(:/slike/SLIKE/gumb2.png);
 border:none;
 background-color: rgba(255, 255, 255, 0)</string>
        </property>
@@ -93,22 +93,6 @@ background-color: rgba(255, 255, 255, 0)</string>
  <resources/>
  <connections>
   <connection>
-   <sender>btnZapri</sender>
-   <signal>clicked()</signal>
-   <receiver>ZacetnoOkno</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>339</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>btnZacni</sender>
    <signal>clicked()</signal>
    <receiver>ZacetnoOkno</receiver>
@@ -117,6 +101,22 @@ background-color: rgba(255, 255, 255, 0)</string>
     <hint type="sourcelabel">
      <x>109</x>
      <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnZapri</sender>
+   <signal>clicked()</signal>
+   <receiver>ZacetnoOkno</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>208</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>

@@ -13,8 +13,11 @@
    height="150.00002"
    id="svg3088"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
-   sodipodi:docname="Nov dokument 3">
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="gumb_NE.svg"
+   inkscape:export-filename="/home/vladimir/Projects/rpoprojekt/SLIKE/Ne.png"
+   inkscape:export-xdpi="76.800003"
+   inkscape:export-ydpi="76.800003">
   <defs
      id="defs3090" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="95.71429"
-     inkscape:cy="169.28571"
+     inkscape:zoom="1.4"
+     inkscape:cx="-76.290584"
+     inkscape:cy="83.44586"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,10 +38,12 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1366"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-height="715"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true" />
   <metadata
      id="metadata3093">
     <rdf:RDF>
@@ -47,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -66,30 +71,28 @@
          inkscape:export-filename="C:\Users\Rok\Desktop\zeton2.png"
          transform="translate(131.42857,288.57143)"
          id="g5409-2-7">
-        <path
-           sodipodi:type="arc"
+        <circle
            style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#ffbe00;stroke-width:15.64199924;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
            id="path2989-2-6"
-           sodipodi:cx="288.57144"
-           sodipodi:cy="352.36218"
-           sodipodi:rx="185.71428"
+           transform="matrix(1.3425393,0,0,1.3425394,-137.41851,-220.69794)"
+           sodipodi:type="arc"
            sodipodi:ry="185.71428"
-           d="m 474.28572,352.36218 c 0,102.56717 -83.14711,185.71428 -185.71428,185.71428 -102.56716,0 -185.71428,-83.14711 -185.71428,-185.71428 0,-102.56716 83.14712,-185.71428 185.71428,-185.71428 102.56717,0 185.71428,83.14712 185.71428,185.71428 z"
-           transform="matrix(1.3425393,0,0,1.3425394,-137.41851,-220.69794)" />
+           sodipodi:rx="185.71428"
+           sodipodi:cy="352.36218"
+           sodipodi:cx="288.57144" />
         <a
            id="a5354-1-1"
            transform="translate(-3.2817686e-7,-2.0944274e-6)"
            style="fill:#ffff00;fill-opacity:1;stroke:#ff9600;stroke-opacity:1">
-          <path
+          <circle
              transform="matrix(1.4285714,0,0,1.4285714,-123.46937,-183.66543)"
-             d="m 411.42856,305.21933 c 0,82.84271 -67.15729,150 -150,150 -82.84271,0 -150,-67.15729 -150,-150 0,-82.84271 67.15729,-150 150,-150 82.84271,0 150,67.15729 150,150 z"
+             id="path3759-6-8"
+             style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#ffbe00;stroke-width:14.70000076;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+             sodipodi:type="arc"
              sodipodi:ry="150"
              sodipodi:rx="150"
              sodipodi:cy="305.21933"
-             sodipodi:cx="261.42856"
-             id="path3759-6-8"
-             style="fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:#ffbe00;stroke-width:14.70000076;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-             sodipodi:type="arc" />
+             sodipodi:cx="261.42856" />
         </a>
         <rect
            style="fill:#ffbe00;fill-opacity:1;fill-rule:nonzero;stroke:#ffbe00;stroke-width:18.90774155;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
@@ -102,15 +105,16 @@
       </g>
     </g>
     <flowRoot
-       transform="matrix(1.2862042,0,0,1.210084,143.838,-97.118976)"
+       transform="matrix(1.2862042,0,0,1.210084,133.94536,-108.8531)"
        xml:space="preserve"
        id="flowRoot3944-2"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Adobe Naskh Medium;-inkscape-font-specification:Adobe Naskh Medium"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:'Adobe Naskh Medium';-inkscape-font-specification:'Adobe Naskh Medium';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
          id="flowRegion3946-9"><rect
            id="rect3948-9"
-           width="108.89445"
-           height="80.610176"
+           width="62.800892"
+           height="48.735168"
            x="144.24979"
            y="582.84326" /></flowRegion><flowPara
-         id="flowPara3979">NE</flowPara></flowRoot>  </g>
+         id="flowPara3979"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans'">NE</flowPara></flowRoot>  </g>
 </svg>
