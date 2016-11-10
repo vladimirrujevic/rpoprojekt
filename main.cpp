@@ -1,6 +1,10 @@
 #include "glavnookno.h"
 #include "zacetnookno.h"
 #include "ui_zacetnookno.h"
+#include "izpis_neodloceno.h"
+#include "ui_izpis_neodloceno.h"
+#include "izpis_zmagovalca.h"
+#include "ui_izpis_zmagovalca.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

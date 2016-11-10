@@ -14,13 +14,21 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         glavnookno.cpp \
-    zacetnookno.cpp
+    zacetnookno.cpp \
+    izpis_zmagovalca.cpp \
+    izpis_zmagovalca.cpp \
+    izpis_neodloceno.cpp
 
 HEADERS  += glavnookno.h \
-    zacetnookno.h
+    zacetnookno.h \
+    izpis_zmagovalca.h \
+    izpis_zmagovalca.h \
+    izpis_neodloceno.h
 
 FORMS    += glavnookno.ui \
-    zacetnookno.ui
+    zacetnookno.ui \
+    izpis_zmagovalca.ui \
+    izpis_neodloceno.ui
 
 RESOURCES += \
     resource.qrc
