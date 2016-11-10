@@ -25,7 +25,7 @@
      <x>0</x>
      <y>0</y>
      <width>456</width>
-     <height>19</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
@@ -74,7 +74,4 @@
    </hints>
   </connection>
  </connections>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
- </buttongroups>
 </ui>

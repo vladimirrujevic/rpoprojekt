@@ -19,6 +19,7 @@ public:
 private slots:
   void on_actionZacni_igro_triggered();
 
+public slots:
   void onBtnStart();
 private:
   Ui::glavnookno *ui;

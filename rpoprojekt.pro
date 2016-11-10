@@ -21,3 +21,6 @@ HEADERS  += glavnookno.h \
 
 FORMS    += glavnookno.ui \
     zacetnookno.ui
+
+RESOURCES += \
+    resource.qrc

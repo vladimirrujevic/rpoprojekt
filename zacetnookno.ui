@@ -13,51 +13,85 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="btnZacni">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>250</y>
-     <width>80</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Začni igro</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnZapri">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>250</y>
-     <width>80</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Zapri</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/slike/SLIKE/Ozadje1.png);</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="btnZacni">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(:/slike/SLIKE/gumb1.png);
+border:none;
+background-color: rgba(255, 255, 255, 0);
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnZapri">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(:/slike/SLIKE/gumb2.png);
+border:none;
+background-color: rgba(255, 255, 255, 0)</string>
+       </property>
+       <property name="locale">
+        <locale language="Slovenian" country="Slovenia"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>btnZacni</sender>
-   <signal>clicked()</signal>
-   <receiver>ZacetnoOkno</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>249</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btnZapri</sender>
    <signal>clicked()</signal>
@@ -67,6 +101,22 @@
     <hint type="sourcelabel">
      <x>339</x>
      <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnZacni</sender>
+   <signal>clicked()</signal>
+   <receiver>ZacetnoOkno</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
