@@ -15,20 +15,21 @@ TEMPLATE = app
 SOURCES += main.cpp\
         glavnookno.cpp \
     zacetnookno.cpp \
-    izpis_zmagovalca.cpp \
-    izpis_zmagovalca.cpp \
-    izpis_neodloceno.cpp
+    vnosimena1.cpp \
+    vnosimena2.cpp
 
 HEADERS  += glavnookno.h \
     zacetnookno.h \
-    izpis_zmagovalca.h \
-    izpis_zmagovalca.h \
-    izpis_neodloceno.h
+    vnosimena1.h \
+    vnosimena2.h
 
 FORMS    += glavnookno.ui \
     zacetnookno.ui \
-    izpis_zmagovalca.ui \
-    izpis_neodloceno.ui
+    vnosimena1.ui \
+    vnosimena2.ui
 
 RESOURCES += \
     resource.qrc
+
+STATECHARTS += \
+    neke.scxml
