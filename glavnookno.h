@@ -14,13 +14,13 @@ class glavnookno : public QMainWindow
 
 public:
   explicit glavnookno(QWidget *parent = 0);
-  //void start();
+  void vnosImen();
+  void zmagovalec(int);
   ~glavnookno();
 
 private slots:
 
 public slots:
-  void onBtnStart();
   void start();
 private:
   Ui::glavnookno *ui;

@@ -1,17 +1,18 @@
 <RCC>
-    <qresource prefix="/slike">
-        <file>SLIKE/IgralnaPovršina.png</file>
-        <file>SLIKE/Ozadje1.png</file>
-        <file>SLIKE/Ozadje2.png</file>
-        <file>SLIKE/gumb1.png</file>
-        <file>SLIKE/Ne.png</file>
-        <file>SLIKE/zeton1.png</file>
-        <file>SLIKE/zeton2.png</file>
-        <file>SLIKE/Da.png</file>
-        <file>SLIKE/gumb2.png</file>
-        <file>SLIKE/zmaga1.png</file>
-        <file>SLIKE/gumb_Izhod.png</file>
-        <file>SLIKE/gumb_Nova_igra.png</file>
-        <file>SLIKE/draw.png</file>
+    <qresource prefix="/">
+        <file>img/Da.png</file>
+        <file>img/draw.png</file>
+        <file>img/gumb_Izhod.png</file>
+        <file>img/gumb_Nova_igra.png</file>
+        <file>img/gumb1.png</file>
+        <file>img/gumb2.png</file>
+        <file>img/IgralnaPovršina.png</file>
+        <file>img/Ne.png</file>
+        <file>img/Ozadje1.png</file>
+        <file>img/Ozadje2.png</file>
+        <file>img/tile.png</file>
+        <file>img/zeton1.png</file>
+        <file>img/zeton2.png</file>
+        <file>img/zmaga1.png</file>
     </qresource>
 </RCC>

@@ -15,21 +15,28 @@ TEMPLATE = app
 SOURCES += main.cpp\
         glavnookno.cpp \
     zacetnookno.cpp \
-    vnosimena1.cpp \
-    vnosimena2.cpp
+    cpp/izpis_neodloceno.cpp \
+    cpp/izpis_zmagovalca.cpp \
+    cpp/vnosimena1.cpp \
+    cpp/vnosimena2.cpp \
+    cpp/igralec.cpp \
+    cpp/igra.cpp
 
 HEADERS  += glavnookno.h \
     zacetnookno.h \
-    vnosimena1.h \
-    vnosimena2.h
+    cpp/izpis_neodloceno.h \
+    cpp/izpis_zmagovalca.h \
+    cpp/vnosimena1.h \
+    cpp/vnosimena2.h \
+    cpp/igralec.h \
+    cpp/igra.h
 
 FORMS    += glavnookno.ui \
     zacetnookno.ui \
-    vnosimena1.ui \
-    vnosimena2.ui
+    ui/izpis_neodloceno.ui \
+    ui/izpis_zmagovalca.ui \
+    ui/vnosimena1.ui \
+    ui/vnosimena2.ui
 
 RESOURCES += \
     resource.qrc
-
-STATECHARTS += \
-    neke.scxml
