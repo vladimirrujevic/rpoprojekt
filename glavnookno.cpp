@@ -62,6 +62,7 @@ void glavnookno::start(){
   i1->zmaga();
 }
 
+//funkcija za vnos imen
 void glavnookno::vnosImen(){
   QString imeI, imeII;
   QDialog *dI = new QDialog(0,0),
