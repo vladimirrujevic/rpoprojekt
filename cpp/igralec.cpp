@@ -15,3 +15,7 @@ int Igralec::getZmage(){
 QString Igralec::getIme(){
   return ime;
 }
+
+int Igralec::getSt(){
+  return st;
+}

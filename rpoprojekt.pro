@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     cpp/vnosimena1.cpp \
     cpp/vnosimena2.cpp \
     cpp/igralec.cpp \
-    cpp/igra.cpp
+    cpp/igra.cpp \
+    cpp/clickhandler.cpp
 
 HEADERS  += glavnookno.h \
     zacetnookno.h \
@@ -29,7 +30,8 @@ HEADERS  += glavnookno.h \
     cpp/vnosimena1.h \
     cpp/vnosimena2.h \
     cpp/igralec.h \
-    cpp/igra.h
+    cpp/igra.h \
+    cpp/clickhandler.h
 
 FORMS    += glavnookno.ui \
     zacetnookno.ui \

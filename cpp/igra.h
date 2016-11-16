@@ -6,13 +6,14 @@
 class Igra
 {
 private:
-  Igralec *i1, *i2;
+  Igralec *i1, *i2, *naVrsti;
   int** polje;
 public:
   Igra();
   Igra(Igralec *i1, Igralec *i2);
   int** getPolje();
-  int potez(int x, int y, int i);
+  Igralec *getNaVrsti();
+  int potez(int y, int p);
 };
 
 #endif // IGRA_H
