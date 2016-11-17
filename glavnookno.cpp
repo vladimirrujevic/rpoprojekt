@@ -11,7 +11,6 @@
 #include <QApplication>
 #include <QWidget>
 
-
 glavnookno::glavnookno(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::glavnookno)
@@ -49,7 +48,7 @@ glavnookno::~glavnookno()
 
 void glavnookno::start(){
   //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
-  QMessageBox::about(this, "V razvoju", "To je test");
+  //QMessageBox::about(this, "V razvoju", "To je test");
   //ovde se pokliče funkcija za začetek nove igre
   if(i1 == NULL && i2 == NULL)//ker igralci obstajajo tudi ko se igra zaključi, se funkcija za vnos imen kliče samo po prvem zagonu
     vnosImen();
@@ -111,6 +110,8 @@ void glavnookno::updateUi(){
   ui->lblScore2->setText(QString::number(i2->getZmage()));
   ui->statusBar->setStatusTip("Na vrsti je: " + igra->getNaVrsti()->getIme());
 }
+
+
 
 void glavnookno::zmagovalec(int z){
   QDialog* d = new QDialog(0,0);
