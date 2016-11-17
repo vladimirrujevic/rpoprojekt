@@ -10,11 +10,15 @@
 #include <QInputDialog>
 #include <QApplication>
 #include <QWidget>
+#include <QLabel>
+#include <QTimer>
 
 glavnookno::glavnookno(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::glavnookno)
 {
+  // QTime mytimer;
+  // mytimer.start();
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   this->igra = NULL;
@@ -57,6 +61,11 @@ void glavnookno::start(){
     igra = NULL;
   }
   igra = new Igra(i1, i2);
+  /*
+  QTimer *timer=new QTimer(this);
+  connect(timer,SIGNAL(timeout()),this,SLOT(izpiscas()));
+  timer->start(1000);
+  */
   this->updateUi();
   this->clearPolje();
   //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
@@ -65,6 +74,12 @@ void glavnookno::start(){
   this->setPolje(0,0,1);
   this->setPolje(0,1,2);*/
 }
+
+/*
+Q_SLOT void izpiscas(){
+    //ui->cas->setText();
+}
+*/
 
 //funkcija za vnos imen
 void glavnookno::vnosImen(){
@@ -108,7 +123,12 @@ void glavnookno::updateUi(){
   ui->txtIgralec2->setText(i2->getIme());
   ui->lblScore1->setText(QString::number(i1->getZmage()));
   ui->lblScore2->setText(QString::number(i2->getZmage()));
-  ui->statusBar->setStatusTip("Na vrsti je: " + igra->getNaVrsti()->getIme());
+
+  //ui->statusBar->setStatusTip("Na vrsti je: " + igra->getNaVrsti()->getIme());
+  QLabel *statusLabel = new QLabel(this);
+  statusLabel->setText("Na vrsti je: " + igra->getNaVrsti()->getIme());
+  statusLabel->setLayoutDirection(Qt::LeftToRight);
+  ui->statusBar->addPermanentWidget(statusLabel);
 }
 
 
@@ -128,7 +148,12 @@ void glavnookno::zmagovalec(int z){
     zUi.lblWin->setText(zUi.lblWin->text() + " " + QString::number(z));
     int s = d->exec();
     if (s == QDialog::Accepted){
-      this->start();
+        if(i1->getSt()==z){
+            i1->zmaga();
+        }else{
+            i2->zmaga();
+        }
+        this->start();
     }
   }
 }

@@ -26,6 +26,7 @@ public:
   void potez(int x, int y);
   void updateUi();
   void ilegalMove();
+  //Q_SLOT void izpiscas();
   Igra *igra;
   QGridLayout *igP;
   ~glavnookno();

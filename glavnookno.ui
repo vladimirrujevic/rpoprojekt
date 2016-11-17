@@ -144,17 +144,29 @@ border-image:none;</string>
           </layout>
          </item>
          <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLineEdit" name="cas">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+             </property>
+             <property name="text">
+              <string>cas</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+           </item>
+          </layout>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
