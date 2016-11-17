@@ -13,6 +13,7 @@ public:
   Igralec(QString ime, int st);
   Igralec(Igralec &c);
   void zmaga();
+  int getSt();
   int getZmage();
   QString getIme();
 };

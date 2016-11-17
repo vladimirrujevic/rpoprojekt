@@ -9,12 +9,8 @@
 #include <QString>
 #include <QInputDialog>
 #include <QApplication>
-//Includes for game logic
-#include "cpp/igra.h"
+#include <QWidget>
 
-//deklaracija objektov igra, igralec1 in igralec2
-Igra* igra = NULL;
-Igralec *i1 = NULL, *i2 = NULL;
 
 glavnookno::glavnookno(QWidget *parent) :
   QMainWindow(parent),
@@ -22,13 +18,22 @@ glavnookno::glavnookno(QWidget *parent) :
 {
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
-
+  this->igra = NULL;
+  this->i1 = NULL;
+  this->i2 = NULL;
+  ch = new ClickHandler(this);
+  igP = ui->igralnaP;
+  for(int i = 0; i<6; i++)
+    for(int j = 0; j<7; j++){
+      QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
+      w->installEventFilter(ch);
+    }
 
 }
 
 glavnookno::~glavnookno()
 {
-  //počisti memorijo ko zaključiš program
+  //počisti pomnilnik ko zaključiš program
   if(igra != NULL){
     delete igra;
     igra = NULL;
@@ -53,13 +58,13 @@ void glavnookno::start(){
     igra = NULL;
   }
   igra = new Igra(i1, i2);
-  //izpis imen igralcev in posodabljanje števila zmag
-  ui->txtIgralec1->setText(i1->getIme());
-  ui->lblScore1->setText(QString::number(i1->getZmage()));
-  ui->txtIgralec2->setText(i2->getIme());
-  ui->lblScore2->setText(QString::number(i2->getZmage()));
+  this->updateUi();
+  this->clearPolje();
   //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
-  i1->zmaga();
+  /*i1->zmaga();
+  this->updateUi();
+  this->setPolje(0,0,1);
+  this->setPolje(0,1,2);*/
 }
 
 //funkcija za vnos imen
@@ -77,6 +82,34 @@ void glavnookno::vnosImen(){
   dII->exec();
   imeII = vi2.txtIme->text();
   i2 = new Igralec(imeII, 2);
+}
+
+void glavnookno::setPolje(int x, int y, int i){
+  QWidget *w = (QWidget*)ui->igralnaP->itemAtPosition(x, y+1)->widget();
+  if(i == 1)
+    w->setStyleSheet("border-image: url(:/img/tileR.png);");
+  else if(i == 2)
+    w->setStyleSheet("border-image: url(:/img/tileY.png);");
+}
+
+void glavnookno::clearPolje(){
+  for(int i = 0; i<6; i++)
+    for(int j = 0; j<7; j++){
+      QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
+      w->setStyleSheet("border-image: url(:/img/tile.png);\nbackground-color: rgba(255, 255, 255, 200);");
+    }
+}
+
+void glavnookno::ilegalMove(){
+  QMessageBox::warning(this, "Napaka", "Nedovoljen potez", QMessageBox::Ok, QMessageBox::Cancel);
+}
+
+void glavnookno::updateUi(){
+  ui->txtIgralec1->setText(i1->getIme());
+  ui->txtIgralec2->setText(i2->getIme());
+  ui->lblScore1->setText(QString::number(i1->getZmage()));
+  ui->lblScore2->setText(QString::number(i2->getZmage()));
+  ui->statusBar->setStatusTip("Na vrsti je: " + igra->getNaVrsti()->getIme());
 }
 
 void glavnookno::zmagovalec(int z){

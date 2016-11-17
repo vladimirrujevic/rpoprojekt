@@ -14,5 +14,7 @@
         <file>img/zeton1.png</file>
         <file>img/zeton2.png</file>
         <file>img/zmaga1.png</file>
+        <file>img/tileR.png</file>
+        <file>img/tileY.png</file>
     </qresource>
 </RCC>
