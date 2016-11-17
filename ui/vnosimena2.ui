@@ -14,7 +14,7 @@
    <string>Štiri v vrsto</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: red;</string>
+   <string notr="true">background-color: yellow;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -23,7 +23,7 @@
       <widget class="QLabel" name="label_">
        <property name="font">
         <font>
-         <family>Noto Sans UI</family>
+         <family>Hobo Std</family>
          <pointsize>26</pointsize>
         </font>
        </property>
@@ -61,6 +61,9 @@ VNESI SVOJE IME</string>
          <family>Hobo Std</family>
          <pointsize>20</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: grey;</string>
        </property>
        <property name="text">
         <string>POTRDI</string>

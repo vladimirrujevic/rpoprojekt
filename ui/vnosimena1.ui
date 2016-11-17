@@ -14,7 +14,7 @@
    <string>Štiri v vrsto</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: yellow;</string>
+   <string notr="true">background-color: red;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
