@@ -13,7 +13,7 @@ public:
   Igra(Igralec *i1, Igralec *i2);
   int** getPolje();
   Igralec *getNaVrsti();
-  int potez(int y, int p);
+  int *potez(int y, int p);
 };
 
 #endif // IGRA_H

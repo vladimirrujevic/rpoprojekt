@@ -554,14 +554,6 @@ background-color: rgba(255, 255, 255, 200);</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="7">
-          <widget class="QWidget" name="polje56" native="true">
-           <property name="styleSheet">
-            <string notr="true">border-image: url(:/img/tile.png);
-background-color: rgba(255, 255, 255, 200);</string>
-           </property>
-          </widget>
-         </item>
          <item row="3" column="6">
           <widget class="QWidget" name="polje35" native="true">
            <property name="styleSheet">
@@ -591,6 +583,20 @@ background-color: rgba(255, 255, 255, 200);</string>
            <property name="styleSheet">
             <string notr="true">border-image: url(:/img/tile.png);
 background-color: rgba(255, 255, 255, 200);</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="7">
+          <widget class="QFrame" name="frame_4">
+           <property name="styleSheet">
+            <string notr="true">border-image: url(:/img/tile.png);
+background-color: rgba(255, 255, 255, 200);</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
           </widget>
          </item>

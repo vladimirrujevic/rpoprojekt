@@ -22,8 +22,12 @@ public:
   void vnosImen();
   void zmagovalec(int);
   void setPolje(int x, int y, int i);
+  void clearPolje();
   void potez(int x, int y);
   void updateUi();
+  void ilegalMove();
+  Igra *igra;
+  QGridLayout *igP;
   ~glavnookno();
 
 private slots:
@@ -32,9 +36,9 @@ public slots:
   void start();
 private:
   Ui::glavnookno *ui;
-  Igra *igra;
+
   Igralec *i1, *i2;
-  ClickHandler *ch = new ClickHandler();
+  class ClickHandler *ch;
 };
 
 #endif // GLAVNOOKNO_H

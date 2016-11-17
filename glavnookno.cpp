@@ -21,7 +21,9 @@ glavnookno::glavnookno(QWidget *parent) :
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
-  for(int i = 0; i<5; i++)
+  ch = new ClickHandler(this);
+  igP = ui->igralnaP;
+  for(int i = 0; i<6; i++)
     for(int j = 0; j<7; j++){
       QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
       w->installEventFilter(ch);
@@ -31,7 +33,7 @@ glavnookno::glavnookno(QWidget *parent) :
 
 glavnookno::~glavnookno()
 {
-  //počisti memorijo ko zaključiš program
+  //počisti pomnilnik ko zaključiš program
   if(igra != NULL){
     delete igra;
     igra = NULL;
@@ -57,11 +59,12 @@ void glavnookno::start(){
   }
   igra = new Igra(i1, i2);
   this->updateUi();
+  this->clearPolje();
   //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
-  i1->zmaga();
+  /*i1->zmaga();
   this->updateUi();
   this->setPolje(0,0,1);
-  this->setPolje(0,1,2);
+  this->setPolje(0,1,2);*/
 }
 
 //funkcija za vnos imen
@@ -87,6 +90,18 @@ void glavnookno::setPolje(int x, int y, int i){
     w->setStyleSheet("border-image: url(:/img/tileR.png);");
   else if(i == 2)
     w->setStyleSheet("border-image: url(:/img/tileY.png);");
+}
+
+void glavnookno::clearPolje(){
+  for(int i = 0; i<6; i++)
+    for(int j = 0; j<7; j++){
+      QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
+      w->setStyleSheet("border-image: url(:/img/tile.png);\nbackground-color: rgba(255, 255, 255, 200);");
+    }
+}
+
+void glavnookno::ilegalMove(){
+  QMessageBox::warning(this, "Napaka", "Nedovoljen potez", QMessageBox::Ok, QMessageBox::Cancel);
 }
 
 void glavnookno::updateUi(){

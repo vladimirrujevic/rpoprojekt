@@ -9,6 +9,7 @@
 class ClickHandler : public QObject
 {
   Q_OBJECT
+private:
 protected:
   bool eventFilter(QObject *obj, QEvent *event);
 public:
