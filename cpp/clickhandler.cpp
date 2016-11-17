@@ -12,8 +12,10 @@ bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
     i = g->indexOf((QWidget *)obj);
     g->getItemPosition(i, &x, &y, &xs, &ys);
     int* addr = w->igra->potez(y-1, w->igra->getNaVrsti()->getSt());
-    if(addr[0] == 0)
+    if(addr[0] == 0){
       w->setPolje(addr[1], addr[2], w->igra->getNaVrsti()->getSt());
+     // polje
+    }
     else
       w->ilegalMove();
     return true;

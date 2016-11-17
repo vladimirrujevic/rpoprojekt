@@ -18,6 +18,86 @@ int** Igra::getPolje(){
   return polje;
 }
 
+//preverjanje zmagovalca vodoravno
+bool Igra::preveriVodoravno(int y, int p){
+    int v;
+    if(p==i1->getSt()){
+        v = i1->getSt();
+    }
+    else{
+        v = i2->getSt();
+    }
+    for(int i=0;i<4;i++){
+        if(polje[i][y]!=v){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+}
+
+//preverjanje zmagovalca navpično
+bool Igra::preveriNavpicno(int y, int p){
+    int v;
+    if(p==i1->getSt()){
+        v = i1->getSt();
+    }
+    else{
+        v = i2->getSt();
+    }
+    for(int i=0;i<4;i++){
+        if(polje[y][i]!=v){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+}
+
+//preverjanje zmagovalca po diagonali
+bool Igra::preveriDiagonalo1(int y, int p){
+    int v;
+    if(p==i1->getSt()){
+        v = i1->getSt();
+    }
+    else{
+        v = i2->getSt();
+    }
+    for(int i=0;i<4;i++){
+        if(polje[i][y+i]!=v){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+}
+
+//preverjanje zmagovalca po diagonali
+bool Igra::preveriDiagonalo2(int y, int p){
+    int v;
+    if(p==i1->getSt()){
+        v = i1->getSt();
+    }
+    else{
+        v = i2->getSt();
+    }
+    for(int i=0;i<4;i++){
+        if(polje[i][y-i]!=v){
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+}
+
 Igralec* Igra::getNaVrsti(){
   return naVrsti;
 }
@@ -31,8 +111,9 @@ int* Igra::potez(int y, int p){
     naVrsti = i2;
   else
     naVrsti = i1;
-  if(polje[0][y] != 0)
+  if(polje[0][y] != 0 ){
     ret[0] = -1;
+  }
   else{
     while(i>=0){
     //for(int i = 5; i>=0; i--)

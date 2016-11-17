@@ -5,6 +5,7 @@
 #include <QEvent>
 #include <QGridLayout>
 #include <glavnookno.h>
+#include <cpp/igra.h>
 
 class ClickHandler : public QObject
 {
