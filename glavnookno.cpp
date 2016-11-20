@@ -31,7 +31,9 @@ glavnookno::glavnookno(QWidget *parent) :
       QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
       w->installEventFilter(ch);
     }
-
+  statusLabel = new QLabel(this);
+  statusLabel->setLayoutDirection(Qt::LeftToRight);
+  ui->statusBar->addPermanentWidget(statusLabel);
 }
 
 glavnookno::~glavnookno()
@@ -51,10 +53,8 @@ glavnookno::~glavnookno()
 }
 
 void glavnookno::start(){
-  //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
-  //QMessageBox::about(this, "V razvoju", "To je test");
   //ovde se pokliče funkcija za začetek nove igre
-  if(i1 == NULL && i2 == NULL)//ker igralci obstajajo tudi ko se igra zaključi, se funkcija za vnos imen kliče samo po prvem zagonu
+  if(i1 == NULL && i2 == NULL)
     vnosImen();
   if(igra != NULL){
     delete igra;
@@ -68,11 +68,6 @@ void glavnookno::start(){
   */
   this->updateUi();
   this->clearPolje();
-  //Naslednji klici so uporabljeni za testiranje, ne spreminjati in obrisati pred finalnom različicom
-  /*i1->zmaga();
-  this->updateUi();
-  this->setPolje(0,0,1);
-  this->setPolje(0,1,2);*/
 }
 
 /*
@@ -104,6 +99,7 @@ void glavnookno::setPolje(int x, int y, int i){
     w->setStyleSheet("border-image: url(:/img/tileR.png);");
   else if(i == 2)
     w->setStyleSheet("border-image: url(:/img/tileY.png);");
+  this->updateUi();
 }
 
 void glavnookno::clearPolje(){
@@ -123,12 +119,7 @@ void glavnookno::updateUi(){
   ui->txtIgralec2->setText(i2->getIme());
   ui->lblScore1->setText(QString::number(i1->getZmage()));
   ui->lblScore2->setText(QString::number(i2->getZmage()));
-
-  //ui->statusBar->setStatusTip("Na vrsti je: " + igra->getNaVrsti()->getIme());
-  QLabel *statusLabel = new QLabel(this);
   statusLabel->setText("Na vrsti je: " + igra->getNaVrsti()->getIme());
-  statusLabel->setLayoutDirection(Qt::LeftToRight);
-  ui->statusBar->addPermanentWidget(statusLabel);
 }
 
 

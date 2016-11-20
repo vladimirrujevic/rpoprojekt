@@ -1,2 +1,4 @@
 build-*
 *.R*
+Thumbs.db
+*.user

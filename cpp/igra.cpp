@@ -17,7 +17,7 @@ Igra::Igra(Igralec *i1, Igralec *i2){
 int** Igra::getPolje(){
   return polje;
 }
-
+/*
 //preverjanje zmagovalca vodoravno
 bool Igra::preveriVodoravno(int y, int p){
     int v;
@@ -97,7 +97,7 @@ bool Igra::preveriDiagonalo2(int y, int p){
 
     }
 }
-
+*/
 Igralec* Igra::getNaVrsti(){
   return naVrsti;
 }
@@ -111,12 +111,10 @@ int* Igra::potez(int y, int p){
     naVrsti = i2;
   else
     naVrsti = i1;
-  if(polje[0][y] != 0 ){
+  if(polje[0][y] != 0)
     ret[0] = -1;
-  }
   else{
     while(i>=0){
-    //for(int i = 5; i>=0; i--)
       if(polje[i][y] == 0){
         polje[i][y] = p;
         ret[1] = i;

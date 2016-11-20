@@ -11,12 +11,11 @@ bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
     QGridLayout *g = w->igP;
     i = g->indexOf((QWidget *)obj);
     g->getItemPosition(i, &x, &y, &xs, &ys);
+    i = w->igra->getNaVrsti()->getSt();//debug
     int* addr = w->igra->potez(y-1, w->igra->getNaVrsti()->getSt());
     if(addr[0] == 0){
-      w->setPolje(addr[1], addr[2], w->igra->getNaVrsti()->getSt());
-     // polje
-    }
-    else
+      w->setPolje(addr[1], addr[2], i);
+    }else
       w->ilegalMove();
     return true;
   } else {

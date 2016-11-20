@@ -5,7 +5,7 @@
 #include <QEvent>
 #include <QGridLayout>
 #include <glavnookno.h>
-#include <cpp/igra.h>
+//clickhandler se "pogovarja" direktno in samo z glavnim oknom, ni treba vključevati igra.h
 
 class ClickHandler : public QObject
 {

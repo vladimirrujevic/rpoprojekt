@@ -63,6 +63,7 @@ border-image:none;</string>
              </property>
              <property name="font">
               <font>
+               <family>Noto Sans UI</family>
                <weight>75</weight>
                <bold>true</bold>
               </font>
@@ -149,6 +150,7 @@ border-image:none;</string>
             <widget class="QLineEdit" name="cas">
              <property name="font">
               <font>
+               <family>Noto Sans UI</family>
                <pointsize>16</pointsize>
               </font>
              </property>
@@ -186,6 +188,7 @@ border-image:none;</string>
              </property>
              <property name="font">
               <font>
+               <family>Noto Sans UI</family>
                <weight>75</weight>
                <bold>true</bold>
               </font>
@@ -625,7 +628,7 @@ background-color: rgba(255, 255, 255, 200);</string>
      <x>0</x>
      <y>0</y>
      <width>483</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
@@ -635,20 +638,11 @@ background-color: rgba(255, 255, 255, 200);</string>
     <addaction name="actionZacni_igro"/>
     <addaction name="actionZapri"/>
    </widget>
-   <widget class="QMenu" name="menuDebug">
-    <property name="title">
-     <string>Debug</string>
-    </property>
-    <addaction name="actionZmagovalec1"/>
-    <addaction name="actionZmagovalec2"/>
-    <addaction name="actionNedolo_eno"/>
-   </widget>
    <addaction name="menu_tiri_v_vrsto"/>
-   <addaction name="menuDebug"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="statusTip">
-    <string>Na vrsti je:</string>
+    <string/>
    </property>
    <property name="sizeGripEnabled">
     <bool>true</bool>

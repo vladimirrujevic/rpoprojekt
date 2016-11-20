@@ -29,6 +29,7 @@ public:
   //Q_SLOT void izpiscas();
   Igra *igra;
   QGridLayout *igP;
+  QLabel *statusLabel;
   ~glavnookno();
 
 private slots:
