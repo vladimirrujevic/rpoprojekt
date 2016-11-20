@@ -16,6 +16,7 @@ public:
   Igra();
   Igra(Igralec *i1, Igralec *i2);
   int** getPolje();
+  void setNaVrsti(Igralec *n);
   Igralec *getNaVrsti();
   void lock();
   bool locked();
@@ -26,6 +27,7 @@ public:
   void preveriNavpicno(int y, int p);
   void preveriDiagonalo1(int y, int p);
   void preveriDiagonalo2(int y, int p);*/
+  ~Igra();
 };
 
 #endif // IGRA_H

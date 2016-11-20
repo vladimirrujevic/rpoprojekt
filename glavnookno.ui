@@ -6,15 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>483</width>
-    <height>473</height>
+    <width>559</width>
+    <height>607</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>334</width>
+    <height>427</height>
+   </size>
   </property>
   <property name="acceptDrops">
    <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>Štiri v vrsto</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -165,6 +175,9 @@ border-image:none;</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -630,7 +643,7 @@ background-color: rgba(255, 255, 255, 200);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>483</width>
+     <width>559</width>
      <height>19</height>
     </rect>
    </property>
@@ -684,7 +697,9 @@ background-color: rgba(255, 255, 255, 200);</string>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionZapri</sender>

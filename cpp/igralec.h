@@ -16,6 +16,7 @@ public:
   int getSt();
   int getZmage();
   QString getIme();
+  ~Igralec();
 };
 
 #endif // IGRALEC_H

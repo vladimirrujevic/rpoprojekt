@@ -8,8 +8,6 @@ glavnookno::glavnookno(QWidget *parent) :
   ui(new Ui::glavnookno)
 {
   timer=new QTimer(this);
-  // QTime mytimer;
-  // mytimer.start();
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   this->igra = NULL;
@@ -28,6 +26,7 @@ glavnookno::glavnookno(QWidget *parent) :
   //timer:
   timer = new QTimer(this);
   connect(timer,SIGNAL(timeout()), this, SLOT(izpiscas()));
+  z = NULL;
 }
 
 glavnookno::~glavnookno()
@@ -43,6 +42,9 @@ glavnookno::~glavnookno()
     delete i2;
     i2 = NULL;
   }
+  if(igP != NULL)
+    igP = NULL;
+  z = NULL;
   delete ui;
 }
 
@@ -55,6 +57,8 @@ void glavnookno::start(){
     igra = NULL;
   }
   igra = new Igra(i1, i2);
+  if(z != NULL)
+    igra->setNaVrsti(z);
   cas = new QTime(0,0,0);
   timer->start(1000);
   if(igra->locked())
@@ -126,19 +130,16 @@ void glavnookno::zmagovalec(int z){
     else
       timer->stop();
   } else {
-    if(i1->getSt() == z){
-        i1->zmaga();
-    } else {
-        i2->zmaga();
-    }
     updateUi();
     Ui_Izpis_zmagovalca zUi;
     zUi.setupUi(d);
     if(i1->getSt() == z){
         i1->zmaga();
+        this->z = i1;
         zUi.lblWin->setText(zUi.lblWin->text() + " " + i1->getIme());
     } else {
         i2->zmaga();
+        this->z = i2;
         zUi.lblWin->setText(zUi.lblWin->text() + " " + i2->getIme());
     }
     int s = d->exec();

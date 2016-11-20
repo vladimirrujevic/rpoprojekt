@@ -16,5 +16,6 @@
         <file>img/tileR.png</file>
         <file>img/tileY.png</file>
         <file>img/Ozadje2.png</file>
+        <file>img/icon.png</file>
     </qresource>
 </RCC>

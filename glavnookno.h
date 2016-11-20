@@ -44,6 +44,7 @@ public:
   //timer:
   QTimer *timer;
   QTime *cas;
+  Igralec *z;
   ~glavnookno();
 
 private slots:

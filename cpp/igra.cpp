@@ -185,6 +185,10 @@ Igralec* Igra::getNaVrsti(){
   return naVrsti;
 }
 
+void Igra::setNaVrsti(Igralec *n){
+  naVrsti = n;
+}
+
 int* Igra::potez(int y, int p){
   int *ret = new int[3], i = 5;
   ret[0] = 0;
@@ -210,4 +214,16 @@ int* Igra::potez(int y, int p){
   if(l)
     ret[0] = -1;
   return ret;
+}
+
+Igra::~Igra(){
+  i1 = NULL;
+  i2 = NULL;
+  naVrsti = NULL;
+  if(polje != NULL){
+    for(int i = 0; i < 6; i++)
+      delete[] polje[i];
+    delete[] polje;
+    polje = NULL;
+  }
 }
