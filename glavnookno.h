@@ -8,6 +8,18 @@
 //handler
 #include <QEvent>
 #include "cpp/clickhandler.h"
+//includes for UI
+#include "ui_izpis_zmagovalca.h"
+#include "ui_izpis_neodloceno.h"
+#include "ui_vnosimena1.h"
+#include "ui_vnosimena2.h"
+#include <QString>
+#include <QInputDialog>
+#include <QApplication>
+#include <QWidget>
+#include <QLabel>
+#include <QTime>
+#include <QTimer>
 
 namespace Ui {
   class glavnookno;
@@ -30,12 +42,16 @@ public:
   Igra *igra;
   QGridLayout *igP;
   QLabel *statusLabel;
+  //timer:
+  QTimer *timer;
+  QTime *cas;
   ~glavnookno();
 
 private slots:
 
 public slots:
   void start();
+  void izpiscas();
 private:
   Ui::glavnookno *ui;
 

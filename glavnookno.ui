@@ -154,11 +154,14 @@ border-image:none;</string>
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+              <string notr="true">background-color: rgb(255, 255, 255, 150);</string>
              </property>
              <property name="text">
-              <string>cas</string>
+              <string>00:00:00</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
