@@ -11,16 +11,21 @@ class Igra
 private:
   Igralec *i1, *i2, *naVrsti;
   int** polje;
+  bool l;
 public:
   Igra();
   Igra(Igralec *i1, Igralec *i2);
   int** getPolje();
   Igralec *getNaVrsti();
+  void lock();
+  bool locked();
   int *potez(int y, int p);
-  /*bool preveriVodoravno(int y, int p);
-  bool preveriNavpicno(int y, int p);
-  bool preveriDiagonalo1(int y, int p);
-  bool preveriDiagonalo2(int y, int p);*/
+  bool preveriNeodloceno();
+  bool preveriZmaga(int x, int y, int p);
+  /*bool preveriVodoravno(int x, int y, int p);
+  void preveriNavpicno(int y, int p);
+  void preveriDiagonalo1(int y, int p);
+  void preveriDiagonalo2(int y, int p);*/
 };
 
 #endif // IGRA_H

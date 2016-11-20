@@ -15,6 +15,10 @@ bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
     int* addr = w->igra->potez(y-1, w->igra->getNaVrsti()->getSt());
     if(addr[0] == 0){
       w->setPolje(addr[1], addr[2], i);
+      if(w->igra->preveriZmaga(addr[1], addr[2], i))
+        w->zmagovalec(i);
+      else if(w->igra->preveriNeodloceno())
+        w->zmagovalec(0);
     }else
       w->ilegalMove();
     return true;

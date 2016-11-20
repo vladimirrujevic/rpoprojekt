@@ -1,10 +1,11 @@
 #include "igra.h"
 
-Igra::Igra(): i1(NULL), i2(NULL), polje(NULL), naVrsti(NULL){}
+Igra::Igra(): i1(NULL), i2(NULL), polje(NULL), naVrsti(NULL), l(false){}
 Igra::Igra(Igralec *i1, Igralec *i2){
   this->i1 = i1;
   this->i2 = i2;
   this->naVrsti = i1;
+  this->l = false;
   polje = new int*[6];
   for(int i = 0; i<6; i++){
     polje[i] = new int[7];
@@ -17,10 +18,92 @@ Igra::Igra(Igralec *i1, Igralec *i2){
 int** Igra::getPolje(){
   return polje;
 }
+
+void Igra::lock(){
+  l = !l;
+}
+
+bool Igra::locked(){
+  return l;
+}
+
+//igra je neodločena če je polje polno in ni zmagovalca
+bool Igra::preveriNeodloceno(){
+  int i = 0;
+  for(i = 0; i < 7; i++)
+    if(polje[0][i] == 0)
+      return false;
+  return true;
+}
+
+//preverjanje zmagovalca
+bool Igra::preveriZmaga(int x, int y, int p){
+  int v=0, i = x, j = y;
+  bool z = false;
+  //vodoravno
+  while(i<6 && j<7 && polje[i][j]==p){
+    v++;
+    j++;
+  }
+  j = y - 1;
+  while(i<6 && j>=0 && polje[i][j]==p){
+    v++;
+    j--;
+  }
+  if(v >= 4)
+    z = true;
+  //navpično
+  v = 0, i = x, j = y;
+  while(i<6 && j<7 && polje[i][j]==p){
+    v++;
+    i++;
+  }
+  i = x - 1;
+  while(i>=0 && j<7 && polje[i][j]==p){
+    v++;
+    i--;
+  }
+  if(v >= 4)
+    z = true;
+  //diagonalno 1
+  v = 0, i = x, j = y;
+  while(i<6 && j<7 && polje[i][j]==p){
+    v++;
+    i++;
+    j++;
+  }
+  i = x - 1;
+  j = y - 1;
+  while(i>=0 && j>=0 && polje[i][j]==p){
+    v++;
+    i--;
+    j--;
+  }
+  if(v >= 4)
+    z = true;
+  //diagonalno 2
+  v = 0, i = x, j = y;
+  while(i>=0 && j<7 && polje[i][j]==p){
+    v++;
+    i--;
+    j++;
+  }
+  i = x + 1;
+  j = y - 1;
+  while(i<6 && j>=0 && polje[i][j]==p){
+    v++;
+    i++;
+    j--;
+  }
+  if(v >= 4)
+    z = true;
+
+  return z;
+}
+
 /*
 //preverjanje zmagovalca vodoravno
 bool Igra::preveriVodoravno(int y, int p){
-    int v;
     if(p==i1->getSt()){
         v = i1->getSt();
     }
@@ -124,5 +207,7 @@ int* Igra::potez(int y, int p){
       i--;
     }
   }
+  if(l)
+    ret[0] = -1;
   return ret;
 }

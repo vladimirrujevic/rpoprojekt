@@ -27,7 +27,6 @@ glavnookno::glavnookno(QWidget *parent) :
   ui->statusBar->addPermanentWidget(statusLabel);
   //timer:
   timer = new QTimer(this);
-  //mytimer.start();
   connect(timer,SIGNAL(timeout()), this, SLOT(izpiscas()));
 }
 
@@ -58,6 +57,8 @@ void glavnookno::start(){
   igra = new Igra(i1, i2);
   cas = new QTime(0,0,0);
   timer->start(1000);
+  if(igra->locked())
+    igra->lock();
   this->updateUi();
   this->clearPolje();
 }
@@ -115,25 +116,36 @@ void glavnookno::updateUi(){
 
 void glavnookno::zmagovalec(int z){
   QDialog* d = new QDialog(0,0);
+  igra->lock();
   if(z==0){
     Ui_izpis_neodloceno nUi;
     nUi.setupUi(d);
     int s = d->exec();
-    if (s == QDialog::Accepted){
+    if (s == QDialog::Accepted)
       this->start();
-    }
+    else
+      timer->stop();
   } else {
+    if(i1->getSt() == z){
+        i1->zmaga();
+    } else {
+        i2->zmaga();
+    }
+    updateUi();
     Ui_Izpis_zmagovalca zUi;
     zUi.setupUi(d);
-    zUi.lblWin->setText(zUi.lblWin->text() + " " + QString::number(z));
-    int s = d->exec();
-    if (s == QDialog::Accepted){
-        if(i1->getSt()==z){
-            i1->zmaga();
-        }else{
-            i2->zmaga();
-        }
-        this->start();
+    if(i1->getSt() == z){
+        i1->zmaga();
+        zUi.lblWin->setText(zUi.lblWin->text() + " " + i1->getIme());
+    } else {
+        i2->zmaga();
+        zUi.lblWin->setText(zUi.lblWin->text() + " " + i2->getIme());
     }
+    int s = d->exec();
+
+    if (s == QDialog::Accepted)
+      this->start();
+    else
+      timer->stop();
   }
 }
