@@ -98,6 +98,10 @@ void glavnookno::setPolje(int x, int y, int i){
     w->setStyleSheet("border-image: url(:/img/tileR.png);");
   else if(i == 2)
     w->setStyleSheet("border-image: url(:/img/tileY.png);");
+  else if(i==0){
+    w->setStyleSheet("border-image: url(:/img/tile.png);\nbackground-color: rgba(255, 255, 255, 200);");
+    igra->polje[x][y]=0;
+  }
   this->updateUi();
 }
 
@@ -126,7 +130,7 @@ void glavnookno::clearPolje(){
 }
 
 void glavnookno::ilegalMove(){
-  QMessageBox::warning(this, "Napaka", "Nedovoljen potez", QMessageBox::Ok, QMessageBox::Cancel);
+  QMessageBox::warning(this, "Napaka", "Nedovoljena poteza", QMessageBox::Ok, QMessageBox::Cancel);
 }
 
 void glavnookno::updateUi(){
@@ -168,4 +172,20 @@ void glavnookno::zmagovalec(int z){
     else
       timer->stop();
   }
+}
+
+void glavnookno::on_undo_clicked()
+{
+ //naslov
+ /*  int* ii=igra->undo();
+     printf("%p\n",ii);
+     setPolje();*/
+     //printf("velikost  %d\n",igra->velikost());
+     if(igra->velikost()>0){
+         int ii=igra->undo();
+         int jj=igra->undo();
+         //printf("%d %d\n",ii,jj);
+         setPolje(ii,jj,0);
+         igra->getNaVrsti()->getSt();
+      }
 }

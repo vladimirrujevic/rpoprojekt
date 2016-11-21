@@ -204,6 +204,17 @@ int* Igra::potez(int y, int p){
     while(i>=0){
       if(polje[i][y] == 0){
         polje[i][y] = p;
+        /* naslov polja[i][y]
+        int* iii=&polje[i][y];
+        sklad.push(&polje[i][y]);
+        printf("i:%d j:%d %p %p\n",i,y,&polje[i][y],iii);
+        printf("%p\n",sklad.top());
+        */
+        int ii=i;
+        int jj=y;
+        sklad.push(jj);
+        sklad.push(ii);
+
         ret[1] = i;
         ret[2] = y;
         break;
@@ -226,4 +237,14 @@ Igra::~Igra(){
     delete[] polje;
     polje = NULL;
   }
+}
+
+int Igra::undo(){
+    int a=sklad.top();
+    sklad.pop();
+    return a;
+}
+
+size_t Igra::velikost(){
+    return sklad.size();
 }

@@ -52,6 +52,8 @@ public:
 
 private slots:
 
+  void on_undo_clicked();
+
 public slots:
   void start();
   void izpiscas();
