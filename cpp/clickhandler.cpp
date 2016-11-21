@@ -6,9 +6,21 @@ ClickHandler::ClickHandler(QObject *parent) : QObject(parent)
 
 bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
   int i = 0, x = 0, y = 0, xs = 0, ys = 0;
-  if(event->type() == QEvent::MouseButtonRelease){
+
+  /*if(event->type() == QEvent::MouseButtonDblClick)
+  {
+      glavnookno *w = (glavnookno*)this->parent();
+      QPushButton *p = w->volume;
+      w->setMusic();
+  }*/
+
+    if(event->type() == QEvent::MouseButtonRelease){
     glavnookno *w = (glavnookno*)this->parent();
     QGridLayout *g = w->igP;
+
+    //QPushButton *p = w->volume;
+
+
     i = g->indexOf((QWidget *)obj);
     g->getItemPosition(i, &x, &y, &xs, &ys);
     i = w->igra->getNaVrsti()->getSt();//debug

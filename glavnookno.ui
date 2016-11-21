@@ -118,7 +118,7 @@ border-image:none;</string>
                 <string notr="true">font: 75 16pt &quot;Noto Sans&quot;;</string>
                </property>
                <property name="text">
-                <string>100</string>
+                <string>0</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -182,7 +182,33 @@ border-image:none;</string>
             </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+            <widget class="QPushButton" name="volume">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#volume
+{
+	border-image: url(:/img/SoundON.png);
+}
+/*#volume:clicked
+{
+	border-image: url(:/img/SoundOFF.png);
+}*/</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -271,7 +297,7 @@ border-image:none;</string>
                 <string notr="true">font: 75 16pt &quot;Noto Sans&quot;;</string>
                </property>
                <property name="text">
-                <string>100</string>
+                <string>0</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -644,7 +670,7 @@ background-color: rgba(255, 255, 255, 200);</string>
      <x>0</x>
      <y>0</y>
      <width>559</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">

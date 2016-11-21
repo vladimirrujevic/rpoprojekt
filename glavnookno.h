@@ -20,6 +20,8 @@
 #include <QLabel>
 #include <QTime>
 #include <QTimer>
+#include <QObject>
+
 
 namespace Ui {
   class glavnookno;
@@ -40,6 +42,7 @@ public:
   void ilegalMove();
   Igra *igra;
   QGridLayout *igP;
+  QPushButton *volume;
   QLabel *statusLabel;
   //timer:
   QTimer *timer;
@@ -52,6 +55,7 @@ private slots:
 public slots:
   void start();
   void izpiscas();
+  void setMusic();
 private:
   Ui::glavnookno *ui;
 
