@@ -19,8 +19,10 @@ bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
         w->zmagovalec(i);
       else if(w->igra->preveriNeodloceno())
         w->zmagovalec(0);
-    }else
+    }else{
       w->ilegalMove();
+      w->igra->potez(y-1, w->igra->getNaVrsti()->getSt());
+    }
     return true;
   } else {
     return QObject::eventFilter(obj, event);
