@@ -19,7 +19,7 @@ int** Igra::getPolje(){
   return polje;
 }
 
-void Igra::lock(){
+void Igra::lock(){//toggle lock
   l = !l;
 }
 
@@ -194,37 +194,60 @@ int* Igra::potez(int y, int p){
   ret[0] = 0;
   ret[1] = 0;
   ret[2] = 0;
-  if(p == i1->getSt())
+  /*if(p == i1->getSt())//smena se izvede za vsak potez
     naVrsti = i2;
   else
-    naVrsti = i1;
-  if(polje[0][y] != 0)
+    naVrsti = i1;*/
+  if(polje[0][y] != 0)//če je stolpec poln, potez ni pravilen
     ret[0] = -1;
   else{
-    while(i>=0){
-      if(polje[i][y] == 0){
+    while(i>=0){//od spodaj navzgor preverjaj ali je polje prazno
+      if(polje[i][y] == 0){//če je, vstavi žeton
         polje[i][y] = p;
-        /* naslov polja[i][y]
-        int* iii=&polje[i][y];
-        sklad.push(&polje[i][y]);
-        printf("i:%d j:%d %p %p\n",i,y,&polje[i][y],iii);
-        printf("%p\n",sklad.top());
-        */
         int ii=i;
         int jj=y;
         sklad.push(jj);
         sklad.push(ii);
-
+        ret[0] = p;
         ret[1] = i;
         ret[2] = y;
-        break;
+        moves.push(ret);
+        i = 0;
+        if(p == i1->getSt())//smena se izvede samo če je potez pravilen
+          naVrsti = i2;
+        else
+          naVrsti = i1;
       }
       i--;
     }
   }
-  if(l)
+  if(l)//ne dovoli poteza če je igra zaklenjena
     ret[0] = -1;
   return ret;
+}
+
+int* Igra::undo2(){
+  int *p, *r, x = 0, y = 0;
+  r = new int[3];
+  r[0] = 0;
+  r[1] = 0;
+  r[2] = 0;
+  if(!l && !moves.empty()){//ne dovoli undo če je igra zaklenjena ali je stack prazen
+    p = moves.top();
+    moves.pop();
+    x = p[1];
+    y = p[2];
+    polje[x][y] = 0;
+    r[1] = x;
+    r[2] = y;
+    if(p[0] == i1->getSt())//igralec ki zahteva undo je spet na vrsti
+      naVrsti = i1;
+    else
+      naVrsti = i2;
+  } else {
+    r[0] = -1;
+  }
+  return r;
 }
 
 Igra::~Igra(){

@@ -1,12 +1,13 @@
 [Desktop Entry]
-Name=
+Name=Štiri v vrsto
+Name[en_US]=Four in line
+Name[sl]=Štiri v vrsto
 GenericName=
 Comment=
 Exec=/home/vladimir/Projects/rpoprojekt/bin/stiriVvrstoLinux
 Terminal=false
 Type=Application
 Icon=/home/vladimir/Projects/rpoprojekt/img/icon.png
-Categories=
+Categories=Qt;KDE;Game;BoardGame
 StartupNotify=false
 Path=
-Name[en_US]=Štiri v vrsto

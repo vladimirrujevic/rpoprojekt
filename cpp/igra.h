@@ -7,12 +7,15 @@
 //#include "glavnookno.h" je problem ker je glavnookno vključeno v igro pred da je definirano
 //in igra.h vključen v glavnookno pred da je definiran - paradoks
 
+using namespace std;
+
 class Igra
 {
 private:
   Igralec *i1, *i2, *naVrsti;
   //int** polje;
   bool l;
+  stack<int*> moves;
 public:
   int** polje;
   Igra();
@@ -23,6 +26,7 @@ public:
   void lock();
   bool locked();
   int *potez(int y, int p);
+  int *undo2();
   bool preveriNeodloceno();
   bool preveriZmaga(int x, int y, int p);
   /*bool preveriVodoravno(int x, int y, int p);

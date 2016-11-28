@@ -692,7 +692,7 @@ background-color: rgba(255, 255, 255, 200);</string>
      <x>0</x>
      <y>0</y>
      <width>559</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
@@ -701,6 +701,7 @@ background-color: rgba(255, 255, 255, 200);</string>
     </property>
     <addaction name="actionZacni_igro"/>
     <addaction name="actionZapri"/>
+    <addaction name="actionUndo"/>
    </widget>
    <addaction name="menu_tiri_v_vrsto"/>
   </widget>
@@ -741,6 +742,14 @@ background-color: rgba(255, 255, 255, 200);</string>
   <action name="actionNedolo_eno">
    <property name="text">
     <string>Nedoločeno</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
    </property>
   </action>
  </widget>

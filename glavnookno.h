@@ -51,8 +51,8 @@ public:
   ~glavnookno();
 
 private slots:
-
   void on_undo_clicked();
+  void undo2();
 
 public slots:
   void start();

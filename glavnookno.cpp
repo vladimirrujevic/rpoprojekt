@@ -11,6 +11,7 @@ glavnookno::glavnookno(QWidget *parent) :
   timer=new QTimer(this);
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
+  connect(ui->actionUndo, SIGNAL(triggered()), this, SLOT(undo2()));
   connect(ui->volume, SIGNAL(clicked()), this, SLOT(setMusic()));
   this->igra = NULL;
   this->i1 = NULL;
@@ -105,6 +106,14 @@ void glavnookno::setPolje(int x, int y, int i){
   this->updateUi();
 }
 
+void glavnookno::undo2(){
+  int* u = this->igra->undo2();
+  if(u[0] == 0)
+    this->setPolje(u[1], u[2], u[0]);
+  else
+    QMessageBox::warning(this, "Napaka", "Ni možno izvesti undo", QMessageBox::Ok, QMessageBox::Cancel);
+}
+
 void glavnookno::setMusic(){
     QPushButton *p = (QPushButton*)ui->volume;
     QMediaPlayer *m = new QMediaPlayer();
@@ -169,8 +178,10 @@ void glavnookno::zmagovalec(int z){
 
     if (s == QDialog::Accepted)
       this->start();
-    else
+    else {
       timer->stop();
+      updateUi();
+    }
   }
 }
 
