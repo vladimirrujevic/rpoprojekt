@@ -16,12 +16,12 @@ int main(int argc, char *argv[])
   QDialog* d = new QDialog(0,0);
   Ui_ZacetnoOkno zUi;
   zUi.setupUi(d);
-  QMediaPlaylist *playlist = new QMediaPlaylist();
+  /*QMediaPlaylist *playlist = new QMediaPlaylist();
   playlist->addMedia(QUrl("qrc:/audio/audio/music.wav"));
   playlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
   QMediaPlayer *music = new QMediaPlayer();
   music->setPlaylist(playlist);
-  music->play();
+  music->play();*/
   int s = d->exec(), st = 0;
   if(s == QDialog::Rejected){
     a.exit(0);

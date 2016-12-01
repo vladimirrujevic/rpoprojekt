@@ -184,7 +184,7 @@ border-image:none;</string>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <widget class="QPushButton" name="volume">
+              <widget class="QPushButton" name="btnVolume">
                <property name="minimumSize">
                 <size>
                  <width>50</width>
@@ -213,7 +213,7 @@ border-image:none;</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="undo">
+              <widget class="QPushButton" name="btnUndo">
                <property name="maximumSize">
                 <size>
                  <width>80</width>
@@ -692,7 +692,7 @@ background-color: rgba(255, 255, 255, 200);</string>
      <x>0</x>
      <y>0</y>
      <width>559</width>
-     <height>19</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
@@ -703,7 +703,15 @@ background-color: rgba(255, 255, 255, 200);</string>
     <addaction name="actionZapri"/>
     <addaction name="actionUndo"/>
    </widget>
+   <widget class="QMenu" name="menuPomo">
+    <property name="title">
+     <string>Pomoč</string>
+    </property>
+    <addaction name="actionO_aplikaciji"/>
+    <addaction name="actionO_Qt"/>
+   </widget>
    <addaction name="menu_tiri_v_vrsto"/>
+   <addaction name="menuPomo"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="statusTip">
@@ -750,6 +758,16 @@ background-color: rgba(255, 255, 255, 200);</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionO_aplikaciji">
+   <property name="text">
+    <string>O aplikaciji</string>
+   </property>
+  </action>
+  <action name="actionO_Qt">
+   <property name="text">
+    <string>O Qt</string>
    </property>
   </action>
  </widget>

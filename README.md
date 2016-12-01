@@ -16,7 +16,11 @@ Na projektu so sodelovali:
 Asistent na predmetu: asist. Bojan Žlahtič
 
 ## Igra
-TODO:Opis igre, pravila igre...
+###Pravila igre "Štiri v vrsto":
+Igro igrajo dva igralca ki na smeno ustavljajo žetone v stolpce igralneg polja. Žetoni padaju na dno stolpca, če je stolpec poln se potez zavrne. Zmagovalec je prvi igralec ki poveže štiri susedna žetona v kateremkoli smeru, če je polje polno in ni zmagovalca je igra nedoločena.  
+V primeru da je zmagovalec povezal več kot štiri susednih žetonov se šteje ena zmaga.  
+V primeru napačneg poteza, obstaja možnost da se vrne poslednji potez.
+Ko se igra zaključi se igralno polje zaklene, vsak poskus poteza se zavrne. Število zmag je zapomnjeno in se prenaša na naslednjo igro.
 
 # Instalacija in zagon
 ## Windows

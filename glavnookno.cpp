@@ -3,6 +3,13 @@
 #include "ui_glavnookno.h"
 #include <QtMultimedia/QMediaPlaylist>
 #include <QtMultimedia/QMediaPlayer>
+//About Qt
+class QApplication;
+class QApplicationPrivate;
+#if defined(qApp)
+#undef qApp
+#endif
+#define qApp (static_cast<QApplication *>(QCoreApplication::instance()))
 
 glavnookno::glavnookno(QWidget *parent) :
   QMainWindow(parent),
@@ -12,13 +19,14 @@ glavnookno::glavnookno(QWidget *parent) :
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   connect(ui->actionUndo, SIGNAL(triggered()), this, SLOT(undo2()));
-  connect(ui->volume, SIGNAL(clicked()), this, SLOT(setMusic()));
+  connect(ui->btnVolume, SIGNAL(clicked()), this, SLOT(toggleMusic()));
+  connect(ui->actionO_Qt, &QAction::triggered, qApp, &QApplication::aboutQt);
+  connect(ui->btnUndo, SIGNAL(clicked()), this, SLOT(undo2()));
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
   ch = new ClickHandler(this);
   igP = ui->igralnaP;
-  volume = ui->volume;
   for(int i = 0; i<6; i++)
     for(int j = 0; j<7; j++){
       QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
@@ -31,6 +39,13 @@ glavnookno::glavnookno(QWidget *parent) :
   timer = new QTimer(this);
   connect(timer,SIGNAL(timeout()), this, SLOT(izpiscas()));
   z = NULL;
+  //music:
+  playlist = new QMediaPlaylist();
+  playlist->addMedia(QUrl("qrc:/audio/music.wav"));
+  playlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+  mPlayer = new QMediaPlayer();
+  mPlayer->setPlaylist(playlist);
+  mPlayer->play();
 }
 
 glavnookno::~glavnookno()
@@ -114,20 +129,16 @@ void glavnookno::undo2(){
     QMessageBox::warning(this, "Napaka", "Ni možno izvesti undo", QMessageBox::Ok, QMessageBox::Cancel);
 }
 
-void glavnookno::setMusic(){
-    QPushButton *p = (QPushButton*)ui->volume;
-    QMediaPlayer *m = new QMediaPlayer();
-    if(p->styleSheet()=="border-image: url(:/img/SoundON.png);")
-    {
-        p->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
-        m->pause();
-    }
-    else if(p->styleSheet()=="border-image: url(:/img/SoundOFF.png);")
-    {
-        p->setStyleSheet("border-image: url(:/img/SoundON.png);");
-        m->play();
-    }
-    this->updateUi();
+void glavnookno::toggleMusic(){
+  if(music){
+    mPlayer->stop();
+    ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
+  } else {
+    mPlayer->play();
+    ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundON.png);");
+  }
+  music = !music;
+  this->updateUi();
 }
 
 void glavnookno::clearPolje(){
@@ -185,12 +196,12 @@ void glavnookno::zmagovalec(int z){
   }
 }
 
-void glavnookno::on_undo_clicked()
+/*void glavnookno::on_undo_clicked()
 {
  //naslov
  /*  int* ii=igra->undo();
      printf("%p\n",ii);
-     setPolje();*/
+     setPolje();*//*
      //printf("velikost  %d\n",igra->velikost());
      if(igra->velikost()>0){
          int ii=igra->undo();
@@ -200,3 +211,20 @@ void glavnookno::on_undo_clicked()
          igra->getNaVrsti()->getSt();
       }
 }
+*/
+
+/*void glavnookno::setMusic(){
+    QPushButton *p = (QPushButton*)ui->volume;
+    QMediaPlayer *m = new QMediaPlayer();
+    if(p->styleSheet()=="border-image: url(:/img/SoundON.png);")
+    {
+        p->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
+        m->pause();
+    }
+    else if(p->styleSheet()=="border-image: url(:/img/SoundOFF.png);")
+    {
+        p->setStyleSheet("border-image: url(:/img/SoundON.png);");
+        m->play();
+    }
+    this->updateUi();
+}*/

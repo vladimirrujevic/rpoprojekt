@@ -20,8 +20,6 @@
         <file>img/SoundON.png</file>
         <file>img/SoundOFF.png</file>
         <file>img/undo.png</file>
-    </qresource>
-    <qresource prefix="/audio">
         <file>audio/music.wav</file>
     </qresource>
 </RCC>

@@ -21,7 +21,6 @@ bool ClickHandler::eventFilter(QObject *obj, QEvent *event){
         w->zmagovalec(0);
     } else { //če potez ni pravilen
       w->ilegalMove();
-      //w->igra->potez(y-1, w->igra->getNaVrsti()->getSt());//v spremenjeni različici poteza se ta workaround ne uporablja
     }
     return true;
   } else {
