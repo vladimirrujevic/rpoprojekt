@@ -45,7 +45,22 @@ public:
   void ilegalMove();
   Igra *igra;
   QGridLayout *igP;
-  //QPushButton *volume;
+  ~glavnookno();
+
+private slots:
+  void undo2();
+  //timer
+  void izpiscas();
+  //background music
+  void toggleMusic();
+
+public slots:
+  void start();
+  //void setMusic();
+private:
+  Ui::glavnookno *ui;
+  Igralec *i1, *i2;
+  class ClickHandler *ch;
   QLabel *statusLabel;
   //timer:
   QTimer *timer;
@@ -55,22 +70,6 @@ public:
   bool music = true;
   QMediaPlayer *mPlayer;
   QMediaPlaylist *playlist;
-  ~glavnookno();
-
-private slots:
-  //void on_undo_clicked();
-  void undo2();
-
-public slots:
-  void start();
-  void izpiscas();
-  void toggleMusic();
-  //void setMusic();
-private:
-  Ui::glavnookno *ui;
-
-  Igralec *i1, *i2;
-  class ClickHandler *ch;
 };
 
 #endif // GLAVNOOKNO_H

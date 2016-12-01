@@ -19,9 +19,10 @@ glavnookno::glavnookno(QWidget *parent) :
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   connect(ui->actionUndo, SIGNAL(triggered()), this, SLOT(undo2()));
-  connect(ui->btnVolume, SIGNAL(clicked()), this, SLOT(toggleMusic()));
-  connect(ui->actionO_Qt, &QAction::triggered, qApp, &QApplication::aboutQt);
   connect(ui->btnUndo, SIGNAL(clicked()), this, SLOT(undo2()));
+  connect(ui->btnVolume, SIGNAL(clicked()), this, SLOT(toggleMusic()));
+  connect(ui->actionGlazba, SIGNAL(triggered()), this, SLOT(toggleMusic()));
+  connect(ui->actionO_Qt, &QAction::triggered, qApp, &QApplication::aboutQt);
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
@@ -93,19 +94,16 @@ void glavnookno::izpiscas(){
 
 //funkcija za vnos imen
 void glavnookno::vnosImen(){
-  QString imeI, imeII;
   QDialog *dI = new QDialog(0,0),
       *dII = new QDialog(0,0);
   Ui_vnosImena1 vi1;
   Ui_vnosImena2 vi2;
   vi1.setupUi(dI);
   dI->exec();
-  imeI = vi1.txtIme->text();
-  i1 = new Igralec(imeI, 1);
+  i1 = new Igralec(vi1.txtIme->text(), 1);
   vi2.setupUi(dII);
   dII->exec();
-  imeII = vi2.txtIme->text();
-  i2 = new Igralec(imeII, 2);
+  i2 = new Igralec(vi2.txtIme->text(), 2);
 }
 
 void glavnookno::setPolje(int x, int y, int i){
@@ -131,14 +129,13 @@ void glavnookno::undo2(){
 
 void glavnookno::toggleMusic(){
   if(music){
-    mPlayer->stop();
+    mPlayer->pause();
     ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
   } else {
     mPlayer->play();
     ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundON.png);");
   }
   music = !music;
-  this->updateUi();
 }
 
 void glavnookno::clearPolje(){
@@ -164,14 +161,10 @@ void glavnookno::updateUi(){
 void glavnookno::zmagovalec(int z){
   QDialog* d = new QDialog(0,0);
   igra->lock();
+  timer->stop();
   if(z==0){
     Ui_izpis_neodloceno nUi;
     nUi.setupUi(d);
-    int s = d->exec();
-    if (s == QDialog::Accepted)
-      this->start();
-    else
-      timer->stop();
   } else {
     updateUi();
     Ui_Izpis_zmagovalca zUi;
@@ -185,15 +178,9 @@ void glavnookno::zmagovalec(int z){
         this->z = i2;
         zUi.lblWin->setText(zUi.lblWin->text() + " " + i2->getIme());
     }
-    int s = d->exec();
-
-    if (s == QDialog::Accepted)
-      this->start();
-    else {
-      timer->stop();
-      updateUi();
-    }
   }
+  if (d->exec() == QDialog::Accepted)
+    this->start();
 }
 
 /*void glavnookno::on_undo_clicked()
