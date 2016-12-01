@@ -1,4 +1,4 @@
-//Authomatic includes
+//Automatic includes
 #include "glavnookno.h"
 #include <QApplication>
 //Includes for start screen
@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
+
   glavnookno w;
   w.setVisible(false);
   QDialog* d = new QDialog(0,0);

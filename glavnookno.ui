@@ -6,15 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>483</width>
-    <height>473</height>
+    <width>559</width>
+    <height>607</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>334</width>
+    <height>427</height>
+   </size>
   </property>
   <property name="acceptDrops">
    <bool>false</bool>
   </property>
   <property name="windowTitle">
    <string>Štiri v vrsto</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -108,7 +118,7 @@ border-image:none;</string>
                 <string notr="true">font: 75 16pt &quot;Noto Sans&quot;;</string>
                </property>
                <property name="text">
-                <string>100</string>
+                <string>0</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -154,19 +164,66 @@ border-image:none;</string>
                <pointsize>16</pointsize>
               </font>
              </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+              <string notr="true">background-color: rgb(255, 255, 255, 150);</string>
              </property>
              <property name="text">
-              <string>cas</string>
+              <string>00:00:00</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QPushButton" name="btnVolume">
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-image: url(:/img/SoundON.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnUndo">
+               <property name="maximumSize">
+                <size>
+                 <width>80</width>
+                 <height>52</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-image: url(:/img/undo.png);
+border: none;
+background-color: rgba(255,255,255,0);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </item>
@@ -255,7 +312,7 @@ border-image:none;</string>
                 <string notr="true">font: 75 16pt &quot;Noto Sans&quot;;</string>
                </property>
                <property name="text">
-                <string>100</string>
+                <string>0</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -627,18 +684,28 @@ background-color: rgba(255, 255, 255, 200);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>483</width>
-     <height>19</height>
+     <width>559</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
     <property name="title">
-     <string>Štiri v vrsto</string>
+     <string>Štiri v &amp;vrsto</string>
     </property>
     <addaction name="actionZacni_igro"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionGlazba"/>
     <addaction name="actionZapri"/>
    </widget>
+   <widget class="QMenu" name="menuPomo">
+    <property name="title">
+     <string>&amp;Pomoč</string>
+    </property>
+    <addaction name="actionO_aplikaciji"/>
+    <addaction name="actionO_Qt"/>
+   </widget>
    <addaction name="menu_tiri_v_vrsto"/>
+   <addaction name="menuPomo"/>
   </widget>
   <widget class="QStatusBar" name="statusBar">
    <property name="statusTip">
@@ -650,7 +717,7 @@ background-color: rgba(255, 255, 255, 200);</string>
   </widget>
   <action name="actionZapri">
    <property name="text">
-    <string>Zapri</string>
+    <string>&amp;Zapri</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
@@ -658,7 +725,7 @@ background-color: rgba(255, 255, 255, 200);</string>
   </action>
   <action name="actionZacni_igro">
    <property name="text">
-    <string>Nova igra</string>
+    <string>&amp;Nova igra</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -679,9 +746,37 @@ background-color: rgba(255, 255, 255, 200);</string>
     <string>Nedoločeno</string>
    </property>
   </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionO_aplikaciji">
+   <property name="text">
+    <string>O aplikaciji</string>
+   </property>
+  </action>
+  <action name="actionO_Qt">
+   <property name="text">
+    <string>O &amp;Qt</string>
+   </property>
+  </action>
+  <action name="actionGlazba">
+   <property name="text">
+    <string>&amp;Glazba</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionZapri</sender>

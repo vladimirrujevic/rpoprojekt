@@ -19,3 +19,9 @@ QString Igralec::getIme(){
 int Igralec::getSt(){
   return st;
 }
+
+Igralec::~Igralec(){
+  st = 0;
+  zmage = 0;
+  ime = "";
+}

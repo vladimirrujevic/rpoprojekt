@@ -8,6 +8,23 @@
 //handler
 #include <QEvent>
 #include "cpp/clickhandler.h"
+//includes for UI
+#include "ui_izpis_zmagovalca.h"
+#include "ui_izpis_neodloceno.h"
+#include "ui_vnosimena1.h"
+#include "ui_vnosimena2.h"
+#include <QString>
+#include <QInputDialog>
+#include <QApplication>
+#include <QWidget>
+#include <QLabel>
+//timer
+#include <QTime>
+#include <QTimer>
+#include <QObject>
+//music
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 namespace Ui {
   class glavnookno;
@@ -26,21 +43,33 @@ public:
   void potez(int x, int y);
   void updateUi();
   void ilegalMove();
-  //Q_SLOT void izpiscas();
   Igra *igra;
   QGridLayout *igP;
-  QLabel *statusLabel;
   ~glavnookno();
 
 private slots:
+  void undo2();
+  //timer
+  void izpiscas();
+  //background music
+  void toggleMusic();
 
 public slots:
   void start();
+  //void setMusic();
 private:
   Ui::glavnookno *ui;
-
   Igralec *i1, *i2;
   class ClickHandler *ch;
+  QLabel *statusLabel;
+  //timer:
+  QTimer *timer;
+  QTime *cas;
+  Igralec *z;
+  //background music
+  bool music = true;
+  QMediaPlayer *mPlayer;
+  QMediaPlaylist *playlist;
 };
 
 #endif // GLAVNOOKNO_H

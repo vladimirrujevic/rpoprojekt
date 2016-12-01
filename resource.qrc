@@ -16,5 +16,10 @@
         <file>img/tileR.png</file>
         <file>img/tileY.png</file>
         <file>img/Ozadje2.png</file>
+        <file>img/icon.png</file>
+        <file>img/SoundON.png</file>
+        <file>img/SoundOFF.png</file>
+        <file>img/undo.png</file>
+        <file>audio/music.wav</file>
     </qresource>
 </RCC>
