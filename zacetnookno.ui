@@ -55,6 +55,32 @@ background-color: rgba(255, 255, 255, 0);
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="btnNaGlavo">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>66</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image:url(:/img/na_glavo.png);
+border-image:none;
+border:none;
+background-color: rgba(255, 255, 255, 0);
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btnZapri">
        <property name="minimumSize">
         <size>
@@ -123,6 +149,22 @@ background-color: rgba(255, 255, 255, 0)</string>
     <hint type="destinationlabel">
      <x>199</x>
      <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnNaGlavo</sender>
+   <signal>clicked()</signal>
+   <receiver>ZacetnoOkno</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>224</y>
     </hint>
    </hints>
   </connection>

@@ -15,6 +15,9 @@ public:
   explicit ZacetnoOkno(QWidget *parent = 0);
   ~ZacetnoOkno();
 
+/*public slots:
+    void onKlik();*/
+
 private:
   Ui::ZacetnoOkno *ui;
 };
