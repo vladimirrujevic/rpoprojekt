@@ -3,6 +3,13 @@
 #include "ui_glavnookno.h"
 #include <QtMultimedia/QMediaPlaylist>
 #include <QtMultimedia/QMediaPlayer>
+//About Qt
+class QApplication;
+class QApplicationPrivate;
+#if defined(qApp)
+#undef qApp
+#endif
+#define qApp (static_cast<QApplication *>(QCoreApplication::instance()))
 
 glavnookno::glavnookno(QWidget *parent) :
   QMainWindow(parent),
@@ -12,13 +19,17 @@ glavnookno::glavnookno(QWidget *parent) :
   ui->setupUi(this);
   connect(ui->actionZacni_igro, SIGNAL(triggered()), this, SLOT(start()));
   connect(ui->actionUndo, SIGNAL(triggered()), this, SLOT(undo2()));
-  connect(ui->volume, SIGNAL(clicked()), this, SLOT(setMusic()));
+  connect(ui->btnUndo, SIGNAL(clicked()), this, SLOT(undo2()));
+  connect(ui->btnVolume, SIGNAL(clicked()), this, SLOT(toggleMusic()));
+  connect(ui->actionGlazba, SIGNAL(triggered()), this, SLOT(toggleMusic()));
+  connect(ui->actionO_Qt, &QAction::triggered, qApp, &QApplication::aboutQt);
+  connect(ui->actionO_aplikaciji, SIGNAL(triggered()), this, SLOT(about()));
+
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
   ch = new ClickHandler(this);
   igP = ui->igralnaP;
-  volume = ui->volume;
   for(int i = 0; i<6; i++)
     for(int j = 0; j<7; j++){
       QWidget* w = (QWidget*)ui->igralnaP->itemAtPosition(i, j+1)->widget();
@@ -31,6 +42,13 @@ glavnookno::glavnookno(QWidget *parent) :
   timer = new QTimer(this);
   connect(timer,SIGNAL(timeout()), this, SLOT(izpiscas()));
   z = NULL;
+  //music:
+  playlist = new QMediaPlaylist();
+  playlist->addMedia(QUrl("qrc:/audio/music.wav"));
+  playlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop);
+  mPlayer = new QMediaPlayer();
+  mPlayer->setPlaylist(playlist);
+  mPlayer->play();
 }
 
 glavnookno::~glavnookno()
@@ -78,19 +96,16 @@ void glavnookno::izpiscas(){
 
 //funkcija za vnos imen
 void glavnookno::vnosImen(){
-  QString imeI, imeII;
   QDialog *dI = new QDialog(0,0),
       *dII = new QDialog(0,0);
   Ui_vnosImena1 vi1;
   Ui_vnosImena2 vi2;
   vi1.setupUi(dI);
   dI->exec();
-  imeI = vi1.txtIme->text();
-  i1 = new Igralec(imeI, 1);
+  i1 = new Igralec(vi1.txtIme->text(), 1);
   vi2.setupUi(dII);
   dII->exec();
-  imeII = vi2.txtIme->text();
-  i2 = new Igralec(imeII, 2);
+  i2 = new Igralec(vi2.txtIme->text(), 2);
 }
 
 void glavnookno::setPolje(int x, int y, int i){
@@ -114,20 +129,15 @@ void glavnookno::undo2(){
     QMessageBox::warning(this, "Napaka", "Ni možno izvesti undo", QMessageBox::Ok, QMessageBox::Cancel);
 }
 
-void glavnookno::setMusic(){
-    QPushButton *p = (QPushButton*)ui->volume;
-    QMediaPlayer *m = new QMediaPlayer();
-    if(p->styleSheet()=="border-image: url(:/img/SoundON.png);")
-    {
-        p->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
-        m->pause();
-    }
-    else if(p->styleSheet()=="border-image: url(:/img/SoundOFF.png);")
-    {
-        p->setStyleSheet("border-image: url(:/img/SoundON.png);");
-        m->play();
-    }
-    this->updateUi();
+void glavnookno::toggleMusic(){
+  if(music){
+    mPlayer->pause();
+    ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
+  } else {
+    mPlayer->play();
+    ui->btnVolume->setStyleSheet("border-image: url(:/img/SoundON.png);");
+  }
+  music = !music;
 }
 
 void glavnookno::clearPolje(){
@@ -153,14 +163,10 @@ void glavnookno::updateUi(){
 void glavnookno::zmagovalec(int z){
   QDialog* d = new QDialog(0,0);
   igra->lock();
+  timer->stop();
   if(z==0){
     Ui_izpis_neodloceno nUi;
     nUi.setupUi(d);
-    int s = d->exec();
-    if (s == QDialog::Accepted)
-      this->start();
-    else
-      timer->stop();
   } else {
     updateUi();
     Ui_Izpis_zmagovalca zUi;
@@ -174,23 +180,23 @@ void glavnookno::zmagovalec(int z){
         this->z = i2;
         zUi.lblWin->setText(zUi.lblWin->text() + " " + i2->getIme());
     }
-    int s = d->exec();
-
-    if (s == QDialog::Accepted)
-      this->start();
-    else {
-      timer->stop();
-      updateUi();
-    }
   }
+  if (d->exec() == QDialog::Accepted)
+    this->start();
 }
 
-void glavnookno::on_undo_clicked()
+void glavnookno::about(){
+  QMessageBox::about(this, "O aplikaciji", "Štiri v vrsto\nAlpha\n\nŠtudentski projekt\nRazvoj Programske Opreme\nFERI, UM\n\n"
+                                    "Avtori:\nRok Petrovič\nŽan Petrovič\nVladimir Rujević\n"
+                                    "Github repository:\nhttps://github.com/vladimirrujevic/rpoprojekt\n");
+}
+
+/*void glavnookno::on_undo_clicked()
 {
  //naslov
  /*  int* ii=igra->undo();
      printf("%p\n",ii);
-     setPolje();*/
+     setPolje();*//*
      //printf("velikost  %d\n",igra->velikost());
      if(igra->velikost()>0){
          int ii=igra->undo();
@@ -200,3 +206,20 @@ void glavnookno::on_undo_clicked()
          igra->getNaVrsti()->getSt();
       }
 }
+*/
+
+/*void glavnookno::setMusic(){
+    QPushButton *p = (QPushButton*)ui->volume;
+    QMediaPlayer *m = new QMediaPlayer();
+    if(p->styleSheet()=="border-image: url(:/img/SoundON.png);")
+    {
+        p->setStyleSheet("border-image: url(:/img/SoundOFF.png);");
+        m->pause();
+    }
+    else if(p->styleSheet()=="border-image: url(:/img/SoundOFF.png);")
+    {
+        p->setStyleSheet("border-image: url(:/img/SoundON.png);");
+        m->play();
+    }
+    this->updateUi();
+}*/

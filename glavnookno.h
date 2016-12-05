@@ -18,10 +18,13 @@
 #include <QApplication>
 #include <QWidget>
 #include <QLabel>
+//timer
 #include <QTime>
 #include <QTimer>
 #include <QObject>
-
+//music
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 namespace Ui {
   class glavnookno;
@@ -42,27 +45,32 @@ public:
   void ilegalMove();
   Igra *igra;
   QGridLayout *igP;
-  QPushButton *volume;
+  ~glavnookno();
+
+private slots:
+  void about();
+  void undo2();
+  //timer
+  void izpiscas();
+  //background music
+  void toggleMusic();
+
+public slots:
+  void start();
+  //void setMusic();
+private:
+  Ui::glavnookno *ui;
+  Igralec *i1, *i2;
+  class ClickHandler *ch;
   QLabel *statusLabel;
   //timer:
   QTimer *timer;
   QTime *cas;
   Igralec *z;
-  ~glavnookno();
-
-private slots:
-  void on_undo_clicked();
-  void undo2();
-
-public slots:
-  void start();
-  void izpiscas();
-  void setMusic();
-private:
-  Ui::glavnookno *ui;
-
-  Igralec *i1, *i2;
-  class ClickHandler *ch;
+  //background music
+  bool music = true;
+  QMediaPlayer *mPlayer;
+  QMediaPlaylist *playlist;
 };
 
 #endif // GLAVNOOKNO_H
