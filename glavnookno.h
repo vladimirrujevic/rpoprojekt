@@ -48,6 +48,7 @@ public:
   ~glavnookno();
 
 private slots:
+  void about();
   void undo2();
   //timer
   void izpiscas();

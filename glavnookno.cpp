@@ -23,6 +23,8 @@ glavnookno::glavnookno(QWidget *parent) :
   connect(ui->btnVolume, SIGNAL(clicked()), this, SLOT(toggleMusic()));
   connect(ui->actionGlazba, SIGNAL(triggered()), this, SLOT(toggleMusic()));
   connect(ui->actionO_Qt, &QAction::triggered, qApp, &QApplication::aboutQt);
+  connect(ui->actionO_aplikaciji, SIGNAL(triggered()), this, SLOT(about()));
+
   this->igra = NULL;
   this->i1 = NULL;
   this->i2 = NULL;
@@ -181,6 +183,12 @@ void glavnookno::zmagovalec(int z){
   }
   if (d->exec() == QDialog::Accepted)
     this->start();
+}
+
+void glavnookno::about(){
+  QMessageBox::about(this, "O aplikaciji", "Štiri v vrsto\nAlpha\n\nŠtudentski projekt\nRazvoj Programske Opreme\nFERI, UM\n\n"
+                                    "Avtori:\nRok Petrovič\nŽan Petrovič\nVladimir Rujević\n"
+                                    "Github repository:\nhttps://github.com/vladimirrujevic/rpoprojekt\n");
 }
 
 /*void glavnookno::on_undo_clicked()
