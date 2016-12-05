@@ -45,3 +45,5 @@ FORMS    += glavnookno.ui \
 
 RESOURCES += \
     resource.qrc
+
+ICON = img/icon.ico

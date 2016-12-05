@@ -21,5 +21,6 @@
         <file>img/SoundOFF.png</file>
         <file>img/undo.png</file>
         <file>audio/music.wav</file>
+        <file>img/icon.ico</file>
     </qresource>
 </RCC>

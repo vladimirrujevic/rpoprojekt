@@ -1,0 +1,1 @@
+While the program itself is licensed and distributed under GNU GPL v3, this installer is proprietary software. You may not decompile, dissasemble or remix it.

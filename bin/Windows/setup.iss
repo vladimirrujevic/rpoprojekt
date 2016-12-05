@@ -3,14 +3,14 @@
 
 #define MyAppName "Stiri v vrsto"
 #define MyAppVersion "0.1"
-#define MyAppURL "https://github.com/vladimirrujevic/rpoprojekt"
+#define MyAppURL "https://github.com/vladimirrujevic/rpoprojekt/"
 #define MyAppExeName "rpoprojekt.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{D225C93A-0F81-42D3-AB33-123EABEF960F}
+AppId={{2A94A976-DBE5-498D-83AE-2CADE41DE544}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -18,10 +18,12 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
-DisableProgramGroupPage=yes
-OutputDir=C:\QtDeploy
+DefaultGroupName={#MyAppName}
+AllowNoIcons=yes
+LicenseFile=C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\LICENSE.txt
+InfoBeforeFile=C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\preInstalInfo.txt
+OutputDir=C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows
 OutputBaseFilename=setup
-SetupIconFile=C:\QtDeploy\icon.ico
 Compression=lzma
 SolidCompression=yes
 
@@ -32,26 +34,25 @@ Name: "slovenian"; MessagesFile: "compiler:Languages\Slovenian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\QtDeploy\rpoprojekt.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\icon.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\icon.png"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Multimedia.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\QtDeploy\bearer\*"; DestDir: "{app}\bearer"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\QtDeploy\imageformats\*"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\QtDeploy\mediaservice\*"; DestDir: "{app}\mediaservice"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\QtDeploy\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\rpoprojekt.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\libgcc_s_dw2-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\libstdc++-6.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\libwinpthread-1.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Core.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Gui.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Multimedia.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Network.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Svg.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\Qt5Widgets.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\bearer\*"; DestDir: "{app}\bearer"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\imageformats\*"; DestDir: "{app}\imageformats"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\mediaservice\*"; DestDir: "{app}\mediaservice"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Vladimir\Projects\rpoprojekt\bin\Windows\platforms\*"; DestDir: "{app}\platforms"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]

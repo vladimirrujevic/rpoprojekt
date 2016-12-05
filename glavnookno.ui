@@ -23,8 +23,8 @@
    <string>Štiri v vrsto</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resource.qrc">
-    <normaloff>:/img/icon.png</normaloff>:/img/icon.png</iconset>
+   <iconset>
+    <normaloff>img/icon.ico</normaloff>img/icon.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -685,7 +685,7 @@ background-color: rgba(255, 255, 255, 200);</string>
      <x>0</x>
      <y>0</y>
      <width>559</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_tiri_v_vrsto">
@@ -774,9 +774,7 @@ background-color: rgba(255, 255, 255, 200);</string>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>actionZapri</sender>

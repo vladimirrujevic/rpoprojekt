@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Začetno okno - Štiri v vrsto</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/img/icon.ico</normaloff>:/img/icon.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">border-image: url(:/img/Ozadje1.png) 0 0 0 0 stretch;</string>
   </property>
@@ -92,7 +96,9 @@ background-color: rgba(255, 255, 255, 0)</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>btnZacni</sender>
